@@ -1,0 +1,17 @@
+@import url('./common/styles/main.css');
+@import url('./common/modal/trailer-mod/trailer.css');
+@import url('./common/modal/trailer-error-mod/trailer-error.css');
+@import url('./common/modal/footer-mod/footer-mod.css');
+@import url('./common/card/card.css');
+@import url('./catalog-pg/search/search.css');
+@import url('./catalog-pg/pagination/pagination.css');
+@import url('./catalog-pg/catalog/catalog.css');
+@import url('./home-pg/weekly/trends.css');
+@import url('./home-pg/upcoming/upcoming.css');
+@import url('./library-save/saved-films/saved.css');
+@import url('./library-save/load-more/load-more.css');
+@import url('./library-save/genres/genres.css');
+@import url('./library-save/add-to-library/add.css');
+@import url('./main-blocks/hero/hero.css');
+@import url('./main-blocks/header/header.css');
+@import url('./main-blocks/footer/footer.css');

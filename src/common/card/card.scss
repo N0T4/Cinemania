@@ -8,7 +8,16 @@
   border-radius: 5px;
   overflow: hidden;
   //?   It must be general text properties here
+  &:hover {
+    outline: 1px solid white;
+    cursor: url(../../images/Clap_cinema128x128.svg), auto;
 
+    // border-image-source: linear-gradient(
+    //   141.22deg,
+    //   #ffc226 9.4%,
+    //   #f84119 91.91%
+    // );
+  }
   @media (min-width: 768px) {
     width: 224px;
     height: 325px;
@@ -42,7 +51,10 @@
     rgba(0, 0, 0, 0) 63.48%,
     rgba(0, 0, 0, 0.9) 92.16%
   );
-
+  &:hover {
+    outline: 1px solid white;
+    // cursor: url(../../images/Clap_cinema.cur) 4 5;
+  }
   @media (min-width: 1280px) {
     padding-left: 20px;
     padding-right: 20px;

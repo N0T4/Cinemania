@@ -2,10 +2,10 @@
 @import url('./common/modal/trailer-mod/trailer.css');
 @import url('./common/modal/trailer-error-mod/trailer-error.css');
 @import url('./common/modal/footer-mod/footer-mod.css');
-@import url('./common/card/card.css');
+@import url('./common/card/card.scss');
 @import url('./catalog-pg/search/search.css');
 @import url('./catalog-pg/pagination/pagination.css');
-@import url('./catalog-pg/catalog/catalog.css');
+@import url('./catalog-pg/catalog/catalog.scss');
 @import url('./home-pg/weekly/trends.css');
 @import url('./home-pg/upcoming/upcoming.css');
 @import url('./library-save/saved-films/saved.css');

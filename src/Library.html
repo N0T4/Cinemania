@@ -1,14 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <!-- Додавання стилві всіх блоків -->
+
+    <link rel="stylesheet" href="common/styles/main.css">
+
+    <link rel="stylesheet" href="main-blocks/header/header.css">
+
+    <link rel="stylesheet" href="main-blocks/hero/hero.css">
+
+    <link rel="stylesheet" href="library-save/genres/genres.css">
+    <link rel="stylesheet" href="library-save/load-more/load-more.css">
+    <link rel="stylesheet" href="library-save/saved-films/saved.css">
+    <link rel="stylesheet" href="library-save/add-to-library/add.css">
+
+    <link rel="stylesheet" href="main-blocks/footer/footer.css">
+
+    <link rel="stylesheet" href="common/card/card.css">
+
+    <link rel="stylesheet" href="common/modal/film-overview/overview.css">
+
+    <link rel="stylesheet" href="common/modal/footer-mod/footer-mod.css">
+
+    <link rel="stylesheet" href="common/modal/trailer-error/trailer-error.css">
+    <link rel="stylesheet" href="common/modal/trailer/trailer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!---------------------------------->
+
+    <title>My library</title>
 </head>
+
 <body>
+   <section class="first-section">
+            <load ="main-blocks/header/html" />
+        </section>
+
+        <section class="second-section">
+             <load ="main-blocks/hero/hero.html" />
+        </section>
+
+                <section class="library-pg-third-section">
+                    <div class="main-container">
+                        <load ="library-save/genres/genres.html" />
+                        <load ="library-save/saved-films/saved.html" />
+                        <load ="library-save/load-more/load-more.html" />
+                    </div>
+                    
+                </section>
+
+
+        <section class="last-section">
+            <load ="main-blocks/footer/footer.html" />
+        </section>
+
+    <section class="modal-windows">
+           <load ="common/modal/film-overview/overview.html" />
+           <load ="common/modal/footer-mod/footer-mod.html" />
+           <load ="common/modal/trailer-error/trailer-error.html" />
+           <load ="common/modal/trailer/trailer.html" />
+    </section>
+    
+    
     
 </body>
-<script src="Library/Library.js"></script>
+
+<!-- Додавання JS бібліотек -->
+
+
+<script src="main-blocks/hero/hero.js"></script>
+
+<script src="library-save/add-to-library/add.js"></script>
+<script src="library-save/genres/genres.js"></script>
+<script src="library-save/load-more/load-more.js"></script>
+<script src="library-save/saved-films/saved.js"></script>
+
+<script src="common/modal/footer-mod/footer-mod.js"></script>
+
+<script src="common/modal/trailer/trailer.js"></script>
+<script src="common/modal/trailer-error/"></script>
+
+<script src="common/modal/film-overview/overview.js"></script>
+
+<script src="common/card/card.js"></script>
+
+<!--------------------------->
+
 </html>

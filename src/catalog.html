@@ -38,33 +38,34 @@
 </head>
  <body>
         <section class="first-section">
-            <load ="main-blocks/header/html" />
+            <include src="main-blocks/header/html"></include>
         </section>
 
         <section class="second-section">
-             <load ="main-blocks/hero/hero.html" />
+            <include src="main-blocks/hero/hero.html"></include>
         </section>
 
                 <section class="catalog-pg-third-section">
 
                 <div class="main-container">
-                    <load ="catalog-pg/search/search.html" />
-                    <load ="catalog-pg/catalog/catalog.html" />
-                    <load ="catalog-pg/pagination/pagination.html" />
+                    <include src="catalog-pg/search/search.html"></include>
+                    <include src="catalog-pg/catalog/catalog.html"></include>
+                    <include src="catalog-pg/pagination/pagination.html"></include>
+                
                 </div>
                   
                 </section>
 
 
         <section class="last-section">
-            <load ="main-blocks/footer/footer.html" />
+<include src="main-blocks/footer/footer.html"></include>
         </section>
 
     <section class="modal-windows">
-           <load ="common/modal/film-overview/overview.html" />
-           <load ="common/modal/footer-mod/footer-mod.html" />
-           <load ="common/modal/trailer-error-mod/trailer-error.html" />
-           <load ="common/modal/trailer-mod/trailer.html" />
+            <include src="common/modal/film-overview/overview.html"></include>
+            <include src="common/modal/footer-mod/footer-mod.html"></include>
+            <include src="common/modal/trailer-error-mod/trailer-error.html"></include>
+            <include src="common/modal/trailer-mod/trailer.html"></include>
     </section>
 </body>
 

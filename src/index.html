@@ -3,12 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+
+    <!-- Додавання стилві всіх блоків -->
+
+    <link rel="stylesheet" href="common/styles/main.css">
+
+    <link rel="stylesheet" href="main-blocks/header/header.css">
+
+    <link rel="stylesheet" href="main-blocks/hero/hero.css">
+
+    <link rel="stylesheet" href="home-pg/weekly/trends.css">
+
+    <link rel="stylesheet" href="home-pg/upcoming/upcoming.css">
+
+    <link rel="stylesheet" href="main-blocks/footer/footer.css">
+
+    <link rel="stylesheet" href="common/card/card.css">
+
+    <link rel="stylesheet" href="common/modal/film-overview/overview.css">
+
+    <link rel="stylesheet" href="common/modal/footer-mod/footer-mod.css">
+
+    <link rel="stylesheet" href="common/modal/trailer-error/trailer-error.css">
+    <link rel="stylesheet" href="common/modal/trailer/trailer.css">
+
+
+    <!---------------------------------->
+
+    <title>Cinemania</title>
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+
+  <section class="first-section">
+      <load ="main-blocks/header/html" />
+  </section>
+
+      <section class="second-section">
+          <load ="main-blocks/hero/hero.html">
+      </section>
+
+  <section class="home-pg-third-section">
+      <load ="home-pg/weekly/trends.html">
+  </section>
+
+      <section class="home-pg-fourth-section">
+          <load ="home-pg/upcoming/upcoming.html">
+      </section>
+
+  <section class="last-section">
+      <load ="main-blocks/footer/footer.html">
+  </section>
+
+  <section class="modal-windows">
+      <load ="common/modal/film-overview/overview.html">
+      <load ="common/modal/footer-mod/footer-mod.html">
+      <load ="common/modal/trailer-error/trailer-error.html">
+      <load ="common/modal/trailer/trailer.html">
+  </section>
+
   </body>
+  <script src="main-blocks/hero/hero.js"></script>
+
+  <script src="home-pg/weekly/trends.js"></script>
+
+  <script src="home-pg/upcoming/upcoming.js"></script>
+
+  <script src="common/modal/footer-mod/footer-mod.js"></script>
+
+  <script src="common/modal/trailer/trailer.js"></script>
+  <script src="common/modal/trailer-error/"></script>
+
+  <script src="common/modal/film-overview/overview.js"></script>
+
+  <script src="common/card/card.js"></script>
 </html>

@@ -1,19 +1,14 @@
 .catalog-section {
   width: 280px;
   display: flex;
-  // justify-content: center;
   flex-wrap: wrap;
   row-gap: 16px;
   margin: 0 auto;
-  // padding-left: 20px;
-  // padding-right: 20px;
 
   @media (min-width: 768px) {
     width: 704px;
     column-gap: 16px;
     row-gap: 28px;
-    // padding-left: 32px;
-    // padding-right: 32px;
   }
 
   @media (min-width: 1280px) {

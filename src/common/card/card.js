@@ -61,7 +61,7 @@ class CardInfo {
   }
 }
 
-function createCardsCatalog(URL, parentElement) {
+function createCardsCatalog(URL, parentElement, catalogLength = null) {
   const options = {
     method: 'GET',
     headers: {
@@ -74,6 +74,9 @@ function createCardsCatalog(URL, parentElement) {
   fetch(URL, options)
     .then(response => response.json())
     .then(response => {
+      if (catalogLength) {
+        response.results.length = catalogLength;
+      }
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });

@@ -5,64 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Додавання стилві всіх блоків -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-
-    <link rel="stylesheet" href="node-of-styles.css">
-   
+    <link rel="stylesheet" href="node-of-styles.css" />
 
     <!---------------------------------->
 
     <title>Cinemania</title>
   </head>
   <body>
-<a href="./catalog.html"> catalog</a>
-<a href="./index.html"> index </a>
-  <section class="first-section">
-    <include src="./main-blocks/header/header.html"></include>
-     
-  </section>
+    <section class="first-section">
+      <include src="./main-blocks/header/header.html"></include>
+    </section>
 
-      <section class="second-section">
+    <section class="second-section">
       <include src="./main-blocks/hero/hero.html"></include>
-      </section>
+    </section>
 
-  <section class="home-pg-third-section">
-
+    <section class="home-pg-third-section">
       <div class="main-container">
         <include src="./home-pg/weekly/trends.html"></include>
       </div>
-      
-  </section>
+    </section>
 
-      <section class="home-pg-fourth-section">
+    <section class="home-pg-fourth-section">
+      <div class="main-container">
+        <include src="./home-pg/upcoming/upcoming.html"></include>
+      </div>
+    </section>
 
-          <div class="main-container">
-            <include src="./home-pg/upcoming/upcoming.html"></include>
-          </div>
-          
-      </section>
+    <section class="last-section">
+      <include src="./main-blocks/footer/footer.html"></include>
+    </section>
 
-  <section class="last-section">
-    <include src="./main-blocks/footer/footer.html"></include>
-      
-  </section>
-
-  <section class="modal-windows">
-    <include src="./common/modal/film-overview/overview.html"></include>
-    <include src="./common/modal/footer-mod/footer-mod.html"></include>
-    <include src="./common/modal/trailer-error-mod/trailer-error.html"></include>
-    <include src="./common/modal/trailer-mod/trailer.html"></include>
-  </section>
-
+    <section class="modal-windows">
+      <include src="./common/modal/film-overview/overview.html"></include>
+      <include src="./common/modal/footer-mod/footer-mod.html"></include>
+      <include
+        src="./common/modal/trailer-error-mod/trailer-error.html"
+      ></include>
+      <include src="./common/modal/trailer-mod/trailer.html"></include>
+    </section>
   </body>
-   
+
   <!-- Додавання JS бібліотек -->
 
   <script src="node-of-js.js" type="module"></script>
 
   <!--------------------------->
-
 </html>

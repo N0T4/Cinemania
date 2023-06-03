@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Додавання стилві всіх блоків -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Додавання стилві всіх блоків -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="node-of-styles.css">
+    <link rel="stylesheet" href="node-of-styles.css" />
 
-<!---------------------------------->
+    <!---------------------------------->
 
     <title>CATALOG</title>
-</head>
- <body>
-    <a href="./index.html"> index</a>
-    <a href="./library.html"> library</a>
-        <section class="first-section">
-            <include src="./main-blocks/header/header.html"></include>
-        </section>
+  </head>
+  <body>
+    <section class="first-section">
+      <include src="./main-blocks/header/header.html"></include>
+    </section>
 
-        <section class="second-section">
-            <include src="./main-blocks/hero/hero.html"></include>
-        </section>
+    <section class="second-section">
+      <include src="./main-blocks/hero/hero.html"></include>
+    </section>
 
-                <section class="catalog-pg-third-section">
+    <section class="catalog-pg-third-section">
+      <div class="main-container">
+        <include src="./catalog-pg/search/search.html"></include>
+        <include src="./catalog-pg/catalog/catalog.html"></include>
+        <include src="./catalog-pg/pagination/pagination.html"></include>
+      </div>
+    </section>
 
-                <div class="main-container">
-                    <include src="./catalog-pg/search/search.html"></include>
-                    <include src="./catalog-pg/catalog/catalog.html"></include>
-                    <include src="./catalog-pg/pagination/pagination.html"></include>
-                
-                </div>
-                  
-                </section>
-
-
-        <section class="last-section">
-<include src="./main-blocks/footer/footer.html"></include>
-        </section>
+    <section class="last-section">
+      <include src="./main-blocks/footer/footer.html"></include>
+    </section>
 
     <section class="modal-windows">
-            <include src="./common/modal/film-overview/overview.html"></include>
-            <include src="./common/modal/footer-mod/footer-mod.html"></include>
-            <include src="./common/modal/trailer-error-mod/trailer-error.html"></include>
-            <include src="./common/modal/trailer-mod/trailer.html"></include>
+      <include src="./common/modal/film-overview/overview.html"></include>
+      <include src="./common/modal/footer-mod/footer-mod.html"></include>
+      <include
+        src="./common/modal/trailer-error-mod/trailer-error.html"
+      ></include>
+      <include src="./common/modal/trailer-mod/trailer.html"></include>
     </section>
-</body>
+  </body>
 
-<!-- Додавання JS бібліотек -->
-<script src="node-of-js.js" type="module"></script>
+  <!-- Додавання JS бібліотек -->
+  <script src="node-of-js.js" type="module"></script>
 
-<!--------------------------->
-
+  <!--------------------------->
 </html>

@@ -6,7 +6,7 @@
 @import url('./catalog-pg/search/search.css');
 @import url('./catalog-pg/pagination/pagination.css');
 @import url('./catalog-pg/catalog/catalog.scss');
-@import url('./home-pg/weekly/trends.css');
+@import url('./home-pg/weekly/trends.scss');
 @import url('./home-pg/upcoming/upcoming.css');
 @import url('./library-save/saved-films/saved.css');
 @import url('./library-save/load-more/load-more.css');

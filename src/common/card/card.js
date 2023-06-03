@@ -1,8 +1,10 @@
 import cardTemplate from '../../common/card/card.hbs';
 import filmGenres from '../card/all-genres.json';
+import img from '../../images/no-poster-img.png';
 
 function renderPhotoCard(filmData, parentElement) {
-  let { title, poster_path, genre_ids, release_date, vote_average } = filmData;
+  let { title, poster_path, genre_ids, release_date, vote_average, id } =
+    filmData;
   let genresInCard = card.getGenresToFilmCard(genre_ids, filmGenres);
   let filmYear = card.getFilmYear(release_date);
   let filmRaiting = card.getRating(vote_average);
@@ -15,6 +17,7 @@ function renderPhotoCard(filmData, parentElement) {
     genresInCard,
     filmYear,
     filmRaiting,
+    id,
   };
 
   parentElement.insertAdjacentHTML('beforeend', cardTemplate(tenplateObject));

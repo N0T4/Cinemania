@@ -1,4 +1,3 @@
-import img from '../../images/no-poster-img.png';
 import { renderPhotoCard } from '../../common/card/card.js';
 const catalogElement = document.querySelector('.catalog-section');
 
@@ -20,6 +19,7 @@ export default function createCardsCatalog(URL) {
   fetch(URL, options)
     .then(response => response.json())
     .then(response => {
+      console.log(response.results);
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, catalogElement);
       });

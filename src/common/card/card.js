@@ -1,8 +1,10 @@
 import cardTemplate from '../../common/card/card.hbs';
 import filmGenres from '../card/all-genres.json';
+import img from '../../images/no-poster-img.png';
 
 function renderPhotoCard(filmData, parentElement) {
-  let { title, poster_path, genre_ids, release_date, vote_average } = filmData;
+  let { title, poster_path, genre_ids, release_date, vote_average, id } =
+    filmData;
   let genresInCard = card.getGenresToFilmCard(genre_ids, filmGenres);
   let filmYear = card.getFilmYear(release_date);
   let filmRaiting = card.getRating(vote_average);
@@ -15,6 +17,7 @@ function renderPhotoCard(filmData, parentElement) {
     genresInCard,
     filmYear,
     filmRaiting,
+    id,
   };
 
   parentElement.insertAdjacentHTML('beforeend', cardTemplate(tenplateObject));
@@ -58,6 +61,26 @@ class CardInfo {
   }
 }
 
+function createCardsCatalog(URL, parentElement) {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MDYyYWMyZWNiZjNmYjk1YWM5Mzc1ZWNmMDY1Y2M5NiIsInN1YiI6IjY0Nzg1NDRhMDc2Y2U4MDBjNTBhZDZmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dj9JHo6BS7b-nDH8R0SXWEYbjX-5KPxmVhRCe0GPRME',
+    },
+  };
+
+  fetch(URL, options)
+    .then(response => response.json())
+    .then(response => {
+      response.results.forEach(filmInfoObject => {
+        renderPhotoCard(filmInfoObject, parentElement);
+      });
+    })
+    .catch(err => console.error(err));
+}
+
 const card = new CardInfo();
 
-export { card, renderPhotoCard };
+export { card, renderPhotoCard, createCardsCatalog };

@@ -43,7 +43,7 @@ function createCardsCatalog(URL) {
     .then(response => {
       response.results.forEach(
         ({ title, poster_path, genre_ids, release_date, vote_average }) => {
-          let genresInCard = getGenresToFilmCard(genre_ids);
+          let genresInCard = getGenresToFilmCard(genre_ids, filmGenres);
           let filmYear = getFilmYear(release_date);
           let filmRaiting = getRating(vote_average);
 
@@ -64,27 +64,36 @@ function createCardsCatalog(URL) {
     .catch(err => console.error(err));
 }
 
-function getGenresToFilmCard(genresArray) {
-  let firstGenre = filmGenres.find(el => el.id === genresArray[0]);
-  let secondGenre = filmGenres.find(el => el.id === genresArray[1]);
+function getGenresToFilmCard(genresArray, allgenres) {
+  let genres = '-';
+  let firstGenre = '';
+  let secondGenre = '';
+  const MAX_GENRES_STRING_LENGTH = 14;
+  for (let i = 0; i < genresArray.length; i += 1) {
+    if (allgenres.find(el => el.id === genresArray[i])) {
+      firstGenre = allgenres.find(el => el.id === genresArray[i]).name;
+    } else {
+      continue;
+    }
+    if (firstGenre && i != genresArray.length - 1) {
+      secondGenre = allgenres.find(el => el.id === genresArray[i + 1]).name;
 
-  if (firstGenre === undefined) {
-    firstGenre = {};
-    firstGenre.name = '...';
+      break;
+    }
   }
-  if (secondGenre === undefined) {
-    secondGenre = {};
-    secondGenre.name = '';
+  if (firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH) {
+    genres = firstGenre;
+    return genres;
   }
-  return firstGenre.name + ', ' + secondGenre.name;
+  genres = firstGenre + ', ' + secondGenre;
+  return genres;
 }
 
 function getFilmYear(date) {
   if (!date) {
-    return '...';
+    return '-';
   }
   date = date.split('-');
-  console.log(date[0]);
   return date[0];
 }
 

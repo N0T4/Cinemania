@@ -43,14 +43,14 @@ class CardInfo {
         continue;
       }
       if (firstGenre && i != genresArray.length - 1) {
-        secondGenre = allgenres.find(el => el.id === genresArray[i + 1]).name;
+        secondGenre = allgenres.find(el => el.id === genresArray[i + 1].name);
 
         break;
       }
     }
     if (
-      firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH ||
-      secondGenre == false
+      secondGenre === undefined ||
+      firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH
     ) {
       genres = firstGenre;
       return genres;

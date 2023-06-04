@@ -1,0 +1,92 @@
+.upcoming{
+    font-weight: 500;
+    font-family: 'Roboto';
+    font-style: normal;
+}
+.upcoming-black{
+    color: #B7B7B7;
+}
+.upcoming-title {
+    font-size: 12px;
+    line-height: 1.81;
+    text-transform: uppercase;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+.upcoming-title-film {
+    font-size: 12px;
+    line-height: 1.81px;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+    @media screen and (min-width: 320px) {
+        .upcoming-title {
+        font-size: 16px;
+        line-height: 1.81;
+        text-transform: uppercase;
+        margin-top: 32px;
+        margin-bottom: 24px;
+        text-align: start;
+        color: #FFFFFF;
+    } 
+.upcoming-title-film {
+    font-size: 20px;
+    line-height: 1.15;
+    margin-top: 24px;
+    margin-bottom: 20px;}
+.upcoming-release, .upcoming-info-vote{
+    margin-bottom: 12px;
+}
+.upcoming-li-text {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+
+
+.upcoming-ul-text {
+    display: block;
+}
+}
+ @media (min-width: 768px) {
+    .upcoming-title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-top: 44px;
+    margin-bottom: 28px;
+ }
+ .upcoming-title-film { 
+ font-size: 28px;
+ line-height: 1.18;
+ margin-top: 32px;
+ margin-bottom: 24px;}
+
+ .upcoming-ul-text {
+     display: flex;
+     gap: 122px;
+ }
+ }
+ @media (min-width: 1280px) {
+    .upcoming-title {
+    margin-top: 60px;
+    font-size: 28px;
+    line-height: 1.2;
+ }
+.container-upcoming {
+    display: flex;
+    gap: 16px;
+}
+.upcoming-title-film {
+    font-size: 32px;
+    line-height: 1.18;
+    margin-top: 0;
+    margin-bottom: 28px;
+    
+}
+.upcoming-ul-text {
+    display: block;
+}
+}
+    

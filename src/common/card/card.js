@@ -3,10 +3,17 @@ import filmGenres from '../card/all-genres.json';
 import img from '../../images/no-poster-img.png';
 
 function renderPhotoCard(filmData, parentElement) {
-  let { title, poster_path, genre_ids, release_date, vote_average, id } =
-    filmData;
+  let {
+    title,
+    poster_path,
+    genre_ids,
+    release_date,
+    first_air_date,
+    vote_average,
+    id,
+  } = filmData;
   let genresInCard = card.getGenresToFilmCard(genre_ids, filmGenres);
-  let filmYear = card.getFilmYear(release_date);
+  let filmYear = card.getFilmYear(release_date || first_air_date);
   let filmRaiting = card.getRating(vote_average);
 
   let templateObject = {

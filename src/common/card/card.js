@@ -9,7 +9,7 @@ function renderPhotoCard(filmData, parentElement) {
   let filmYear = card.getFilmYear(release_date);
   let filmRaiting = card.getRating(vote_average);
 
-  let tenplateObject = {
+  let templateObject = {
     title,
     fullPath: poster_path
       ? 'https://image.tmdb.org/t/p/w500' + poster_path
@@ -20,7 +20,7 @@ function renderPhotoCard(filmData, parentElement) {
     id,
   };
 
-  parentElement.insertAdjacentHTML('beforeend', cardTemplate(tenplateObject));
+  parentElement.insertAdjacentHTML('beforeend', cardTemplate(templateObject));
 }
 
 class CardInfo {
@@ -41,7 +41,10 @@ class CardInfo {
         break;
       }
     }
-    if (firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH) {
+    if (
+      firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH ||
+      secondGenre == false
+    ) {
       genres = firstGenre;
       return genres;
     }
@@ -61,7 +64,7 @@ class CardInfo {
   }
 }
 
-function createCardsCatalog(URL, parentElement, catalogLength = null) {
+function createCardsCatalog(URL, parentElement, catalogLength = 20) {
   const options = {
     method: 'GET',
     headers: {
@@ -77,6 +80,7 @@ function createCardsCatalog(URL, parentElement, catalogLength = null) {
       if (catalogLength) {
         response.results.length = catalogLength;
       }
+      console.log(response.results);
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });

@@ -3,13 +3,20 @@ import filmGenres from '../card/all-genres.json';
 import img from '../../images/no-poster-img.png';
 
 function renderPhotoCard(filmData, parentElement) {
-  let { title, poster_path, genre_ids, release_date, vote_average, id } =
-    filmData;
+  let {
+    title,
+    poster_path,
+    genre_ids,
+    release_date,
+    first_air_date,
+    vote_average,
+    id,
+  } = filmData;
   let genresInCard = card.getGenresToFilmCard(genre_ids, filmGenres);
-  let filmYear = card.getFilmYear(release_date);
+  let filmYear = card.getFilmYear(release_date || first_air_date);
   let filmRaiting = card.getRating(vote_average);
 
-  let tenplateObject = {
+  let templateObject = {
     title,
     fullPath: poster_path
       ? 'https://image.tmdb.org/t/p/w500' + poster_path
@@ -20,7 +27,7 @@ function renderPhotoCard(filmData, parentElement) {
     id,
   };
 
-  parentElement.insertAdjacentHTML('beforeend', cardTemplate(tenplateObject));
+  parentElement.insertAdjacentHTML('beforeend', cardTemplate(templateObject));
 }
 
 class CardInfo {
@@ -41,7 +48,10 @@ class CardInfo {
         break;
       }
     }
-    if (firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH) {
+    if (
+      firstGenre.length + secondGenre.length > MAX_GENRES_STRING_LENGTH ||
+      secondGenre == false
+    ) {
       genres = firstGenre;
       return genres;
     }
@@ -61,7 +71,7 @@ class CardInfo {
   }
 }
 
-function createCardsCatalog(URL, parentElement, catalogLength = null) {
+function createCardsCatalog(URL, parentElement, catalogLength = 20) {
   const options = {
     method: 'GET',
     headers: {
@@ -77,6 +87,7 @@ function createCardsCatalog(URL, parentElement, catalogLength = null) {
       if (catalogLength) {
         response.results.length = catalogLength;
       }
+      console.log(response.results);
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });

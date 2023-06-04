@@ -13,3 +13,4 @@ import './library-save/genres/genres.js';
 import './library-save/add-to-library/add.js';
 import './main-blocks/hero/hero.js';
 import './common/theme-switching.js';
+import './main-blocks/header/header.js';

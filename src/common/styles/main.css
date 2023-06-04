@@ -70,6 +70,7 @@ body {
 
 body.light-theme {
   background-color: var(--white-smoke);
+  transition: background-color var(--transition-func) var(--transition-dur);
 }
 .visually-hidden {
   position: absolute;
@@ -88,6 +89,7 @@ body.light-theme {
 }
 
 .second-section {
+  margin-top: 70px;
   margin-bottom: 40px;
 }
 

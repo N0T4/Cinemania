@@ -1,4 +1,4 @@
-const catalogEl = document.querySelector('.catalog-section');
+// const catalogEl = document.querySelector('.catalog-section');
 const buttonCloseEl = document.querySelector('.modal-close-btn');
 const backdropEl = document.querySelector('.js-backdrop');
 const modalBodyEl = document.querySelector('.js-modal-body');

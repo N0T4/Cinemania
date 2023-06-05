@@ -1,11 +1,8 @@
-
-
 *,
 :before,
 :after {
   box-sizing: border-box;
 }
-
 
 .backdrop {
   position: fixed;
@@ -30,22 +27,22 @@
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-} 
+}
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.1);
-} 
+}
 
 .no-scroll {
-    overflow: hidden;
-} 
+  overflow: hidden;
+}
 
 .modal {
   position: relative;
   width: 280px;
   height: 847px;
   padding: 52px 16px;
-  top: 70px;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%) scale(1);
   background-color: #111111;

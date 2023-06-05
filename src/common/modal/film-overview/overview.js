@@ -16,15 +16,16 @@ function onOpenModal(e) {
 
   if (!backdropEl.classList.contains('is-hidden')) {
     return;
-    }
+  }
 
-    backdropEl.classList.remove('is-hidden');
-    bodyEl.classList.add('no-scroll');
+  backdropEl.classList.remove('is-hidden');
+  bodyEl.classList.add('no-scroll');
 
   function onCloseEsc(e) {
     if (e.code === 'Escape') {
       backdropEl.classList.add('is-hidden');
       window.removeEventListener('keydown', onCloseEsc);
+      bodyEl.classList.remove('no-scroll');
     }
   }
 
@@ -32,6 +33,7 @@ function onOpenModal(e) {
     if (e.target.classList.contains('js-backdrop')) {
       backdropEl.classList.add('is-hidden');
       backdropEl.removeEventListener('click', onCloseBackdrop);
+      bodyEl.classList.remove('no-scroll');
     }
   }
   backdropEl.addEventListener('click', onCloseBackdrop);
@@ -42,8 +44,8 @@ function onCloseModal(e) {
   if (backdropEl.classList.contains('is-hidden')) {
     return;
   }
-    backdropEl.classList.add('is-hidden');
-    bodyEl.classList.remove('no-scroll');
+  backdropEl.classList.add('is-hidden');
+  bodyEl.classList.remove('no-scroll');
 }
 
 function onGetInfoFilm(id) {
@@ -97,14 +99,14 @@ function createMarkupCardModal({
               <li class="film-item">
                 <p class="film-details">Vote / Votes</p>
                 <p class="film-info--upper">
-                  <span class="film-rating">${vote_average}</span>
+                  <span class="film-rating">${vote_average.toFixed(1)}</span>
                   <span class="film-divider"> / </span>
                   <span class="film-vote-count">${vote_count}</span>
                 </p>
               </li>
               <li class="film-item">
                 <p class="film-details">Popularity</p>
-                <p class="film-info--upper">${popularity}</p>
+                <p class="film-info--upper">${popularity.toFixed(1)}</p>
               </li>
               <li class="film-item">
                 <p class="film-details">Genre</p>
@@ -127,5 +129,3 @@ function createMarkupCardModal({
 function updateCardModal(markup) {
   modalBodyEl.innerHTML = markup;
 }
-
-

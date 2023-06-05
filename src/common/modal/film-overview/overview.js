@@ -1,10 +1,10 @@
-const catalogEl = document.querySelector('.catalog-section');
+// const catalogEl = document.querySelector('.catalog-section');
 const buttonCloseEl = document.querySelector('.modal-close-btn');
 const backdropEl = document.querySelector('.js-backdrop');
 const modalBodyEl = document.querySelector('.js-modal-body');
 const bodyEl = document.body;
 
-catalogEl.addEventListener('click', onOpenModal);
+// catalogEl.addEventListener('click', onOpenModal);
 buttonCloseEl.addEventListener('click', onCloseModal);
 
 function onOpenModal(e) {
@@ -129,3 +129,5 @@ function createMarkupCardModal({
 function updateCardModal(markup) {
   modalBodyEl.innerHTML = markup;
 }
+
+export { onOpenModal };

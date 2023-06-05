@@ -1,6 +1,7 @@
 import cardTemplate from '../../common/card/card.hbs';
 import filmGenres from '../card/all-genres.json';
 import img from '../../images/no-poster-img.png';
+import { onOpenModal } from '../modal/film-overview/overview.js';
 
 function renderPhotoCard(filmData, parentElement) {
   let {
@@ -33,6 +34,11 @@ function renderPhotoCard(filmData, parentElement) {
 class CardInfo {
   getGenresToFilmCard(genresArray, allgenres) {
     let genres = '-';
+
+    if (genresArray.length === 0) {
+      return genres;
+    }
+
     let firstGenre = '';
     let secondGenre = '';
     const MAX_GENRES_STRING_LENGTH = 14;
@@ -91,6 +97,7 @@ function createCardsCatalog(URL, parentElement, catalogLength = 20) {
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });
+      parentElement.addEventListener('click', onOpenModal);
     })
     .catch(err => console.error(err));
 }

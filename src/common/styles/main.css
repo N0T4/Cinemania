@@ -57,6 +57,12 @@ img {
 
 /* Global styles  */
 
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -66,10 +72,12 @@ body {
   color: var(--white);
   background-color: var(--black);
   overflow: overlay;
+  transition: background-color var(--transition-func) var(--transition-dur);
 }
 
 body.light-theme {
   background-color: var(--white-smoke);
+  transition: background-color var(--transition-func) var(--transition-dur);
 }
 .visually-hidden {
   position: absolute;
@@ -88,6 +96,7 @@ body.light-theme {
 }
 
 .second-section {
+  margin-top: 70px;
   margin-bottom: 40px;
 }
 
@@ -123,21 +132,21 @@ body.light-theme {
 
 @media screen and (min-width: 320px) {
   .main-container {
-    width: 280px;
+    width: 300px;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 768px) {
   .main-container {
-    width: 707;
+    width: 768px;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .main-container {
-    width: 1216px;
+    width: 1278px;
     margin: 0 auto;
   }
 }
@@ -153,3 +162,4 @@ body.light-theme {
 
 .last-section {
 }
+

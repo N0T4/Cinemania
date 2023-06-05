@@ -72,6 +72,7 @@ body {
   color: var(--white);
   background-color: var(--black);
   overflow: overlay;
+  transition: background-color var(--transition-func) var(--transition-dur);
 }
 
 body.light-theme {

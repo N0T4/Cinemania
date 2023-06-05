@@ -132,7 +132,7 @@ body.light-theme {
 
 @media screen and (min-width: 768px) {
   .main-container {
-    width: 707;
+    width: 707px;
     margin: 0 auto;
   }
 }

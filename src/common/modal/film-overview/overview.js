@@ -3,7 +3,6 @@ const buttonCloseEl = document.querySelector('.modal-close-btn');
 const backdropEl = document.querySelector('.js-backdrop');
 const modalBodyEl = document.querySelector('.js-modal-body');
 const bodyEl = document.body;
-console.log(bodyEl);
 
 catalogEl.addEventListener('click', onOpenModal);
 buttonCloseEl.addEventListener('click', onCloseModal);
@@ -79,6 +78,12 @@ function createMarkupCardModal({
   vote_count,
   title,
 }) {
+  let genresEl = genres
+    .map(({ name }) => {
+      return `${name}`;
+    })
+    .join(' ');
+
   const markup = `<div class="film-wrapper">
           <img
             class="film-image"
@@ -103,7 +108,7 @@ function createMarkupCardModal({
               </li>
               <li class="film-item">
                 <p class="film-details">Genre</p>
-                <p class="film-info--upper">${genres}</p>
+                <p class="film-info--upper">${genresEl}</p>
               </li>
             </ul>
             <h3 class="film-about-title">ABOUT</h3>
@@ -122,3 +127,5 @@ function createMarkupCardModal({
 function updateCardModal(markup) {
   modalBodyEl.innerHTML = markup;
 }
+
+

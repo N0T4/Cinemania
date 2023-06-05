@@ -57,6 +57,12 @@ img {
 
 /* Global styles  */
 
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -125,21 +131,21 @@ body.light-theme {
 
 @media screen and (min-width: 320px) {
   .main-container {
-    width: 280px;
+    width: 300px;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 768px) {
   .main-container {
-    width: 707px;
+    width: 768px;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .main-container {
-    width: 1216px;
+    width: 1278px;
     margin: 0 auto;
   }
 }

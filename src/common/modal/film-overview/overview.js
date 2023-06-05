@@ -1,11 +1,11 @@
-const catalogEl = document.querySelector('.catalog-section');
+// const catalogEl = document.querySelector('.catalog-section');
 const buttonCloseEl = document.querySelector('.modal-close-btn');
 const backdropEl = document.querySelector('.js-backdrop');
 const modalBodyEl = document.querySelector('.js-modal-body');
 const bodyEl = document.body;
 console.log(bodyEl);
 
-catalogEl.addEventListener('click', onOpenModal);
+// catalogEl.addEventListener('click', onOpenModal);
 buttonCloseEl.addEventListener('click', onCloseModal);
 
 function onOpenModal(e) {
@@ -17,10 +17,10 @@ function onOpenModal(e) {
 
   if (!backdropEl.classList.contains('is-hidden')) {
     return;
-    }
+  }
 
-    backdropEl.classList.remove('is-hidden');
-    bodyEl.classList.add('no-scroll');
+  backdropEl.classList.remove('is-hidden');
+  bodyEl.classList.add('no-scroll');
 
   function onCloseEsc(e) {
     if (e.code === 'Escape') {
@@ -43,8 +43,8 @@ function onCloseModal(e) {
   if (backdropEl.classList.contains('is-hidden')) {
     return;
   }
-    backdropEl.classList.add('is-hidden');
-    bodyEl.classList.remove('no-scroll');
+  backdropEl.classList.add('is-hidden');
+  bodyEl.classList.remove('no-scroll');
 }
 
 function onGetInfoFilm(id) {
@@ -122,3 +122,5 @@ function createMarkupCardModal({
 function updateCardModal(markup) {
   modalBodyEl.innerHTML = markup;
 }
+
+export { onOpenModal };

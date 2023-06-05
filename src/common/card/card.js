@@ -34,6 +34,11 @@ function renderPhotoCard(filmData, parentElement) {
 class CardInfo {
   getGenresToFilmCard(genresArray, allgenres) {
     let genres = '-';
+
+    if (genresArray.length === 0) {
+      return genres;
+    }
+
     let firstGenre = '';
     let secondGenre = '';
     const MAX_GENRES_STRING_LENGTH = 14;

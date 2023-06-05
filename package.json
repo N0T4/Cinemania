@@ -19,7 +19,11 @@
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
+
+    "node-fetch": "^2.6.11"
+
     "notiflix": "^3.2.6"
+
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

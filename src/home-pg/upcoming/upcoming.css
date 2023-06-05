@@ -88,5 +88,9 @@
 .upcoming-ul-text {
     display: block;
 }
+.upcoming-foto-desktop {
+    width: 805px;
+    height: 458px;
+}
 }
     

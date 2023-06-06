@@ -1,13 +1,16 @@
+import noStudentPhoto from '../../images/no-poster-img.png';
+import sharaevskiyPhoto from '../../images/students/sharaevskiy.jpg';
+import puhachPhoto from '../../images/students/puhach.jpg';
 const students = [
   {
     studentName: 'Mikhail Sharaevsky',
     position: 'Team-Lead',
-    photo: './images/students/sharaevskiy.jpg',
+    photo: sharaevskiyPhoto,
   },
   {
     studentName: 'Yaroslav Puhach',
     position: 'Front-end developer',
-    photo: '../../images/no-poster-img.png',
+    photo: puhachPhoto,
   },
 ];
 

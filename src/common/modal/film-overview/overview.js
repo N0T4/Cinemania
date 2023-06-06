@@ -1,5 +1,13 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+Notify.init({
+  info: {
+    background: 'var(--orange)',
+    backOverlayColor: 'var(--black)',
+    textColor: 'var(--black)',
+  },
+});
+
 const refs = {
   buttonCloseEl: document.querySelector('.modal-close-btn'),
   backdropEl: document.querySelector('.js-backdrop'),

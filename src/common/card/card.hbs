@@ -1,4 +1,4 @@
-<a class="film-card" href="#">
+<a class="film-card" href="#" data-id={{id}}>
     <img class="film-card__poster" src={{fullPath}} alt="" />
     <div class="film-card__wrapper">
         <h3 class="film-card__film-name">{{title}}</h3>
@@ -8,7 +8,7 @@
                 <span>|</span>
                 <span class="film-card__year">{{filmYear}}</span>
             </div>
-            <span class="film-card__raiting" title="5">
+            <span class="film-card__raiting" title={{filmRaiting}}>
                 <div class="raiting-body">
                     <div class="rating-active" style=width:{{filmRaiting}};>
                         <div class="rating-active-wrapper">

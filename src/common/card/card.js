@@ -104,4 +104,4 @@ function createCardsCatalog(URL, parentElement, catalogLength = 20) {
 
 const card = new CardInfo();
 
-export { card, renderPhotoCard, createCardsCatalog };
+export { card, renderPhotoCard, createCardsCatalog, img };

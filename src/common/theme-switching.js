@@ -1,12 +1,22 @@
-let isDark = true;
-
-const themeSwitcher = document.querySelector(
-  '.theme-switcher [type="checkbox"]'
-);
+const THEME_MODE = 'theme-mode';
+const themeSwitcher = document.querySelector('.theme-switcher');
 
 themeSwitcher.addEventListener('change', changeTheme);
+isLight();
+
 function changeTheme() {
-  console.log(1);
+  if (localStorage.getItem(THEME_MODE) === 'light') {
+    localStorage.removeItem(THEME_MODE);
+  } else {
+    localStorage.setItem(THEME_MODE, 'light');
+  }
   document.body.classList.toggle('light-theme');
-  isDark = !isDark;
+  isLight();
+}
+
+function isLight() {
+  if (localStorage.getItem(THEME_MODE) === 'light') {
+    themeSwitcher.setAttribute('checked', true);
+    document.body.classList.add('light-theme');
+  }
 }

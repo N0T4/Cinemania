@@ -9,7 +9,7 @@
   overflow: hidden;
 
   &:hover {
-    outline: 1px solid white;
+    box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
     cursor: url(../../images/Clap_cinema128x128.svg), auto;
   }
 
@@ -115,7 +115,7 @@
   max-width: 120px;
   @media (min-width: 768px) {
     width: auto;
-    max-width: 87px;
+    max-width: 90px;
   }
 
   @media (min-width: 1280px) {

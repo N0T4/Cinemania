@@ -121,11 +121,11 @@ function createMarkupCardModal({
       return `${name}`;
     })
     .join(' ');
-  
+
   if (poster_path === null) {
     const markup = `<div class="film-wrapper">
           <img
-            class="film-image"
+            class="film-non-image"
             src="${img}"
             alt="${title}"
             loading="lazy"
@@ -159,8 +159,8 @@ function createMarkupCardModal({
           </div>
         </div>`;
     return markup;
-  } 
-    const markup = `<div class="film-wrapper">
+  }
+  const markup = `<div class="film-wrapper">
           <img
             class="film-image"
             src="https://image.tmdb.org/t/p/w500${poster_path}"
@@ -274,12 +274,10 @@ function getSavedMovies(libName) {
 }
 
 function changeBtnName(libName) {
-  const partOfName = isMovieInStorage(libName)
-    ? 'Remove from '
-    : 'Add to ';
+  const partOfName = isMovieInStorage(libName) ? 'Remove from ' : 'Add to ';
   switch (libName) {
     case 'my library':
-      refs.btnAddToLib.textContent = (partOfName + libName);
+      refs.btnAddToLib.textContent = partOfName + libName;
       return;
   }
 }
@@ -288,9 +286,7 @@ function saveMovie(libName) {
   const savedMovies = getSavedMovies(libName);
   savedMovies.unshift(currentMovieData);
   rewriteLocStorage(libName, savedMovies);
-  Notify.info(
-    `"${currentMovieData.original_title}" has added to ${libName}`
-  );
+  Notify.info(`"${currentMovieData.original_title}" has added to ${libName}`);
 }
 
 function toggleMovie(libName) {

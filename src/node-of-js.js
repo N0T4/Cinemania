@@ -5,3 +5,4 @@ import './main-blocks/hero/hero.js';
 import './common/theme-switching.js';
 import './main-blocks/header/header.js';
 import './main-blocks/footer/footer.js';
+import './common/stickyButton/sticky.js';

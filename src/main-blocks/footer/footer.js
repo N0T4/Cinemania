@@ -1,8 +1,8 @@
 const students = [
   {
-    studentName: 'Sharaevsky Mikhail',
+    studentName: 'Mikhail Sharaevsky',
     position: 'Team-Lead',
-    photo: '../../images/students/sharaevskiy.jpg',
+    photo: './images/students/sharaevskiy.jpg',
   },
   {
     studentName: 'Yaroslav Puhach',

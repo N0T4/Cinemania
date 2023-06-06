@@ -1,4 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import img from '../../../images/no-poster-img.png';
 
 Notify.init({
   info: {
@@ -120,8 +121,46 @@ function createMarkupCardModal({
       return `${name}`;
     })
     .join(' ');
-
-  const markup = `<div class="film-wrapper">
+  
+  if (poster_path === null) {
+    const markup = `<div class="film-wrapper">
+          <img
+            class="film-image"
+            src="${img}"
+            alt="${title}"
+            loading="lazy"
+          />
+          <div class="film-information">
+            <h2 class="film-title">${title}</h2>
+            <ul>
+              <li class="film-item">
+                <p class="film-details">Vote / Votes</p>
+                <p class="film-info--upper">
+                  <span class="film-rating">${vote_average.toFixed(1)}</span>
+                  <span class="film-divider"> / </span>
+                  <span class="film-vote-count">${vote_count}</span>
+                </p>
+              </li>
+              <li class="film-item">
+                <p class="film-details">Popularity</p>
+                <p class="film-info--upper">${popularity.toFixed(1)}</p>
+              </li>
+              <li class="film-item">
+                <p class="film-details">Genre</p>
+                <p class="film-info--upper">${genresEl}</p>
+              </li>
+            </ul>
+            <h3 class="film-about-title">ABOUT</h3>
+            <p class="film-about-text">${overview}</p>
+            <button type="button" class="film-button js-watch">
+              my library
+            </button>
+            
+          </div>
+        </div>`;
+    return markup;
+  } 
+    const markup = `<div class="film-wrapper">
           <img
             class="film-image"
             src="https://image.tmdb.org/t/p/w500${poster_path}"
@@ -156,8 +195,21 @@ function createMarkupCardModal({
             
           </div>
         </div>`;
+
   return markup;
 }
+
+// function getAvailabilityImage({id}) {
+//   const image = [data].map(item => {
+//     if (item === null) {
+//       item = pictureExample;
+//     } else {
+//       item = `https://image.tmdb.org/t/p/w500/${item}`;
+//     }
+//     return item;
+//   });
+//   return image;
+// }
 
 function updateCardModal(markup) {
   refs.modalBodyEl.innerHTML = markup;

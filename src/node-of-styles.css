@@ -14,5 +14,5 @@
 @import url('./library-save/add-to-library/add.css');
 @import url('./main-blocks/hero/hero.css');
 @import url('./main-blocks/header/header.css');
-@import url('./main-blocks/footer/footer.css');
+@import url('./main-blocks/footer/footer.scss');
 @import url('./common/modal/film-overview/overview.css');

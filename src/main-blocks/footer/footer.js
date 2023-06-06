@@ -1,6 +1,8 @@
 import noStudentPhoto from '../../images/no-poster-img.png';
 import sharaevskiyPhoto from '../../images/students/sharaevskiy.jpg';
 import puhachPhoto from '../../images/students/puhach.jpg';
+import kalchenkoPhoto from '../../images/students/kalchenko.jpg';
+
 const students = [
   {
     studentName: 'Mikhail Sharaevsky',
@@ -13,9 +15,9 @@ const students = [
     photo: puhachPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Natalia Kalchenko',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: kalchenkoPhoto,
   },
   {
     studentName: 'NONAME',

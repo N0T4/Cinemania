@@ -1,3 +1,5 @@
+
+
 const fetch = require('node-fetch');
 const url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 const options = {
@@ -11,14 +13,14 @@ const options = {
 fetch(url, options)
   .then(res => res.json())
     .then(json => {
-        if (json.results.length >= 1) {
-          const randomMovie = getRandom(1, 20)
-          const data = json.results[randomMovie]
-          const createdMarkup = createMarkup( {data});
-           upcomingRender.insertAdjacentHTML('beforeend', createdMarkup);
-          //createMarkup(data);
-          console.log(data.title)
-          console.log(data.overview)
+      if (json.results.length >= 1) {
+        const randomMovie = getRandom(1, 20)
+        const data = json.results[randomMovie]
+        const createdMarkup = createMarkup({ data });
+        upcomingRender.insertAdjacentHTML('beforeend', createdMarkup);
+        console.log(data.title)
+        const arrey = data.genre_ids
+        console.log(arrey[1])
         console.log(json.results.length);
       }console.log(json)
     })
@@ -41,7 +43,7 @@ function createMarkup( {data} )
       <source srcset="https://image.tmdb.org/t/p/original/${data.backdrop_path}" media="(min-width: 1200px)" class="upcoming-foto-desktop" loading="lazy"/>
       <source srcset="https://image.tmdb.org/t/p/original/${data.backdrop_path}" media="(min-width: 768px)" class="upcoming-foto-tablet" loading="lazy"/>
       <source srcset="https://image.tmdb.org/t/p/original/${data.poster_path}" media="(min-width: 320px)" class="upcoming-foto-mobile" loading="lazy"/>
-      <img src="./images/12364241.jpg" alt="wwwwww" style="" loading="lazy"/>
+       <img src="https://image.tmdb.org/t/p/original/${data.poster_path}" alt="Poster film" style="width: 805px" loading="lazy"/>
     </picture>
 </div>
   </div>
@@ -52,7 +54,7 @@ function createMarkup( {data} )
                     <div class="upcoming-release">
                         <ul class="upcoming-ul-text">
                         <div class="upcoming-colomb">
-                         <li class="upcoming-li-text"><p class="upcoming-text"> <span class ="upcoming-black">Release date</span> <span class="">${data.release_date}</span></p></li>
+                         <li class="upcoming-li-text"><p class="upcoming-text"> <span class ="upcoming-black">Release date</span> <span class="upcoming-release-data">${data.release_date}</span></p></li>
                         <li class="upcoming-li-text"><p class="upcoming-text"><span class ="upcoming-black">Vote/Votes</span>
 <div class="upcoming-info-votes"><span class="upcoming-white">${data.vote_average}</span> <span
                                 class="slash">/</span>
@@ -60,8 +62,8 @@ function createMarkup( {data} )
                                ${data.vote_count}</span> </div> </p></li>
                         </div>
                         <div>
-                        <li class="upcoming-li-text"> <p class="upcoming-text"> <span class ="upcoming-black">Popularity</span> <span class="">${data.popularity}</span> </p></li>
-                        <li class="upcoming-li-text"> <p class="upcoming-text"><span class ="upcoming-black">Genre</span> <span class="">${data.genreNames}</span> </p></li>
+                        <li class="upcoming-li-text"> <p class="upcoming-text"> <span class ="upcoming-black">Popularity</span> <span class="upcoming-popularity">${data.popularity}</span> </p></li>
+                        <li class="upcoming-li-text"> <p class="upcoming-text"><span class ="upcoming-black">Genre</span> <span class="upcoming-genre">${data.genreNames}</span> </p></li>
                         </ul>
                         </div>
             <h2 class="upcoming-about">ABOUT</h2>

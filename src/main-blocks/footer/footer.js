@@ -1,9 +1,13 @@
-const imageUrl = new URL('./images/no-poster-img.png');
 const students = [
   {
-    studentName: 'Yarosla Puhach',
+    studentName: 'Sharaevsky Mikhail',
+    position: 'Team-Lead',
+    photo: '../../images/students/sharaevskiy.jpg',
+  },
+  {
+    studentName: 'Yaroslav Puhach',
     position: 'Front-end developer',
-    photo: 'imageUrl',
+    photo: '../../images/no-poster-img.png',
   },
 ];
 

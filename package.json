@@ -18,6 +18,7 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
+    "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
     "node-fetch": "^2.6.11",
     "notiflix": "^3.2.6",

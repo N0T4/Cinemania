@@ -4,7 +4,7 @@ import puhachPhoto from '../../images/students/puhach.jpg';
 const students = [
   {
     studentName: 'Mikhail Sharaevsky',
-    position: 'Team-Lead',
+    position: 'Team-Lead, Scrum Master',
     photo: sharaevskiyPhoto,
   },
   {
@@ -20,6 +20,7 @@ const studentsCatalogEl = document.querySelector('.footer-students');
 studentsEl.addEventListener('click', event => {
   event.preventDefault();
   showStudents(students, studentsCatalogEl);
+  showStudentsModal();
 });
 
 function showStudents(studentsArray, parentElement) {
@@ -43,4 +44,28 @@ function showStudents(studentsArray, parentElement) {
     .join('');
 
   parentElement.innerHTML = studentsMarkup;
+  //   scrollToStudentsCards();
+}
+
+// function scrollToStudentsCards() {
+//   let card = document.querySelector('.film-card');
+
+//   window.scrollBy({
+//     top: card.getBoundingClientRect().height * 1.8,
+//     behavior: 'smooth',
+//   });
+// }
+
+function showStudentsModal() {
+  const studentsOverlayElement = document.querySelector('.students-overlay');
+  studentsOverlayElement.classList.remove('visually-hidden');
+
+  closeStudentsModal(studentsOverlayElement);
+}
+
+function closeStudentsModal(element) {
+  const closeBtnElement = document.querySelector('.students-modal-close-btn');
+  closeBtnElement.addEventListener('click', () => {
+    element.classList.add('visually-hidden');
+  });
 }

@@ -42,6 +42,11 @@ footer {
 }
 
 .footer-students {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
   width: 280px;
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +65,24 @@ footer {
   }
 }
 
+.students-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  padding-top: 40px;
+  background-color: rgba(11, 11, 12, 0.8);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.students-header {
+  font-size: 28px;
+  line-height: 33px;
+  text-transform: uppercase;
+  text-align: center;
+}
 .footer-students .film-card__genre {
   max-width: none;
 }

@@ -12,6 +12,56 @@ const students = [
     position: 'Front-end developer',
     photo: puhachPhoto,
   },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
+  {
+    studentName: 'NONAME',
+    position: 'Front-end developer',
+    photo: noStudentPhoto,
+  },
 ];
 
 const studentsEl = document.querySelector('.goit-students');
@@ -44,21 +94,11 @@ function showStudents(studentsArray, parentElement) {
     .join('');
 
   parentElement.innerHTML = studentsMarkup;
-  //   scrollToStudentsCards();
 }
-
-// function scrollToStudentsCards() {
-//   let card = document.querySelector('.film-card');
-
-//   window.scrollBy({
-//     top: card.getBoundingClientRect().height * 1.8,
-//     behavior: 'smooth',
-//   });
-// }
 
 function showStudentsModal() {
   const studentsOverlayElement = document.querySelector('.students-overlay');
-  studentsOverlayElement.classList.remove('visually-hidden');
+  studentsOverlayElement.classList.toggle('visually-hidden');
 
   closeStudentsModal(studentsOverlayElement);
 }

@@ -1,16 +1,66 @@
 import noStudentPhoto from '../../images/no-poster-img.png';
 import sharaevskiyPhoto from '../../images/students/sharaevskiy.jpg';
 import puhachPhoto from '../../images/students/puhach.jpg';
+import kalchenkoPhoto from '../../images/students/kalchenko.jpg';
+import badenkovaPhoto from '../../images/students/badenkova.jpg';
+import konovalovaPhoto from '../../images/students/konovalova.jpg';
+import vorozhbitPhoto from '../../images/students/vorozhbit.jpg';
+import neskrobaPhoto from '../../images/students/neskroba.jpg';
+import pokamiestovaPhoto from '../../images/students/pokamiestova.jpg';
+import dimekhinPhoto from '../../images/students/dimekhin.jpg';
+import poliakovPhoto from '../../images/students/poliakov.jpg';
+
+const audio = document.querySelector('.students-overlay audio');
 const students = [
   {
     studentName: 'Mikhail Sharaevsky',
-    position: 'Team-Lead',
+    position: 'Team-Lead, Scrum Master',
     photo: sharaevskiyPhoto,
   },
   {
     studentName: 'Yaroslav Puhach',
     position: 'Front-end developer',
     photo: puhachPhoto,
+  },
+  {
+    studentName: 'Natalia Kalchenko',
+    position: 'Front-end developer',
+    photo: kalchenkoPhoto,
+  },
+  {
+    studentName: 'Iryna Badenskova',
+    position: 'Front-end developer',
+    photo: badenkovaPhoto,
+  },
+  {
+    studentName: 'Yana Konovalova',
+    position: 'Front-end developer',
+    photo: konovalovaPhoto,
+  },
+  {
+    studentName: 'Andriy Vorozhbit',
+    position: 'Front-end developer',
+    photo: vorozhbitPhoto,
+  },
+  {
+    studentName: 'Oleksandr Neskroba',
+    position: 'Front-end developer',
+    photo: neskrobaPhoto,
+  },
+  {
+    studentName: 'Hanna Pokamiestova',
+    position: 'Front-end developer',
+    photo: pokamiestovaPhoto,
+  },
+  {
+    studentName: 'Maksym Dimekhin',
+    position: 'Front-end developer',
+    photo: dimekhinPhoto,
+  },
+  {
+    studentName: 'Volodymyr Poliakov',
+    position: 'Front-end developer',
+    photo: poliakovPhoto,
   },
 ];
 
@@ -20,6 +70,7 @@ const studentsCatalogEl = document.querySelector('.footer-students');
 studentsEl.addEventListener('click', event => {
   event.preventDefault();
   showStudents(students, studentsCatalogEl);
+  showStudentsModal();
 });
 
 function showStudents(studentsArray, parentElement) {
@@ -43,4 +94,23 @@ function showStudents(studentsArray, parentElement) {
     .join('');
 
   parentElement.innerHTML = studentsMarkup;
+}
+
+function showStudentsModal() {
+  const studentsOverlayElement = document.querySelector('.students-overlay');
+  studentsOverlayElement.classList.toggle('visually-hidden');
+  playMusic();
+  closeStudentsModal(studentsOverlayElement);
+}
+
+function closeStudentsModal(element) {
+  const closeBtnElement = document.querySelector('.students-modal-close-btn');
+  closeBtnElement.addEventListener('click', () => {
+    element.classList.add('visually-hidden');
+    audio.pause();
+  });
+}
+
+function playMusic() {
+  audio.play();
 }

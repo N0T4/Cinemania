@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as basicLightbox from 'basiclightbox'
 import 'basiclightbox/dist/basicLightbox.min.css';
 import {getUser, getTrailer} from "./API"
@@ -7,8 +8,15 @@ import {getTrailer, watchTrailer} from "../../common/modal/trailer-mod/trailer"
 console.log(onOpenModal);
 const hero = document.querySelector(".hero")
 const button = document.querySelector('.button-js');
+=======
+import SimpleLightbox from 'simplelightbox';
+import { getUser, getTrailer } from './API';
+import { onOpenModal } from '../../common/modal/film-overview/overview';
+>>>>>>> 78e6a7c3dd80b650296864999831a43fda11bb10
 
+const hero = document.querySelector('.hero');
 
+<<<<<<< HEAD
 window.addEventListener("resize", updateCinemaText);
 button.addEventListener('click', ()=>{window.location.href = 'library.html'});
 
@@ -26,43 +34,46 @@ function updateLibraryHero(){
         `;
         hero.innerHTML = libMurkup;
       }
+=======
+window.addEventListener('resize', updateCinemaText);
+
+function updateCinemaText() {
+  const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  const cinemaText = document.getElementById('cinema-text');
+
+  if (screenWidth >= 768) {
+    cinemaText.textContent =
+      "Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.";
+  } else {
+    cinemaText.textContent =
+      "Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers.";
+  }
+>>>>>>> 78e6a7c3dd80b650296864999831a43fda11bb10
 }
-getUser().then(res =>{
-    console.log("res in getUser.then",res.results);
-    console.log("res length in getUser.then",res.results.length);
-    if(res.results.length === 0){
-        updateCinemaText()
-    } else{
-        if(window.location.href.includes('library')){
-            updateLibraryHero()
-        }else{
-            renderHero(res)
-        }
-    }
-    }).catch(error=> console.log(error))
 
-function renderHero({results}){
-    const randomNumber = Math.floor(Math.random() * (results.length- 1)) ;
-    const movieTheDay = results[randomNumber];
-    // overview
-    // original_name
-    // backdrop_path
-    // id
+updateCinemaText();
 
-    hero.innerHTML="";
-    hero.style.backgroundImage = `linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(https://image.tmdb.org/t/p/original${movieTheDay.backdrop_path})`;
-    const markUp = `
-        <div class="hero-wrapper">
-            <div class="hero-wrapper-text" >
-                <h1 class="title">${movieTheDay.original_title || movieTheDay.name }</h1>
-                <div id="rating-stars"></div>
-                <p class="text">${movieTheDay.overview.slice(0, 250) + '...'} </p>
-            </div>
-            <div class="hero-btn-wrapper" data-id=${movieTheDay.id}>
-                <button type="button" class="button hero-btn hero-button-js">Watch trailer</button>
-                <button type="button" class="button button-js modal-btn">More details</button>
-            </div>
+getUser()
+  .then(renderHero)
+  .catch(error => console.log(error));
+
+function renderHero({ results }) {
+  const randomNumber = Math.floor(Math.random() * (results.length - 1));
+  const movieTheDay = results[randomNumber];
+
+  hero.innerHTML = '';
+  hero.style.backgroundImage = `linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(https://image.tmdb.org/t/p/original${movieTheDay.backdrop_path})`;
+
+  const markUp = `
+    <div class="hero-wrapper">
+        <div class="hero-wrapper-text">
+            <h1 class="title">${
+              movieTheDay.original_title || movieTheDay.name
+            }</h1>
+            <div id="rating-stars"></div>
+            <p class="text">${movieTheDay.overview.slice(0, 250) + '...'} </p>
         </div>
+<<<<<<< HEAD
     `
     hero.innerHTML = markUp;
     hero.classList.add(".hero-js")
@@ -74,11 +85,24 @@ function renderHero({results}){
 
     console.log("movieTheDay.id",movieTheDay.id);
     getTrailer(movieTheDay.id).then(watchTrailer).catch()
+=======
+        <div class="hero-btn-wrapper" data-id=${movieTheDay.id}>
+            <button type="button" class="button hero-btn hero-button-js">Watch trailer</button>
+            <button type="button" class="button button-js modal-btn">More details</button>
+        </div>
+    </div>
+    `;
+  hero.innerHTML = markUp;
+  hero.classList.add('hero-js');
+  let rating = movieTheDay.vote_average;
+  showRating(rating);
+>>>>>>> 78e6a7c3dd80b650296864999831a43fda11bb10
 
+  const detailsButton = document.querySelector('.modal-btn');
+  detailsButton.addEventListener('click', onOpenModal);
 }
 
 function showRating(rating) {
-  console.log("rating inside showRating", rating);
   const filledStarsWidth = (rating / 10) * 100;
   let starsHTML = '<div class="star filled-star" style="width: ' + filledStarsWidth + '%;">';
   starsHTML += '&#9733;'.repeat(5);
@@ -86,6 +110,7 @@ function showRating(rating) {
   const ratingStarsElement = document.getElementById('rating-stars');
   ratingStarsElement.innerHTML = starsHTML;
 }
+<<<<<<< HEAD
 function updateCinemaText() {
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let cinemaText = document.getElementById("cinema-text");
@@ -99,12 +124,13 @@ function updateCinemaText() {
       cinemaText.textContent = "Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers.";
     }
   }
+=======
+>>>>>>> 78e6a7c3dd80b650296864999831a43fda11bb10
 
-
-// function watchTrailer({data}){
+// function watchTrailer({ data }) {
 //     const watchButton = document.querySelector('.hero-button-js');
-//     console.log("function watch trailer:",data);
 //     const trailers = data.results;
+<<<<<<< HEAD
 //     if(trailers.length !== 0){
 //         console.log("если не равно нулю",trailers);
 //         const randomIndex = Math.floor(Math.random() * (trailers.length- 1)) ;
@@ -115,6 +141,26 @@ function updateCinemaText() {
 //             const videoUrl = `https://www.youtube.com/embed/${randomTrailer.key}`;
 //             openVideoModal(videoUrl);
 //           });
+=======
+//     if (trailers.length !== 0) {
+//         const randomIndex = Math.floor(Math.random() * (trailers.length - 1));
+//         const randomTrailer = trailers[randomIndex];
+//         watchButton.addEventListener('click', () => {
+//             const instance = basicLightbox.create(`
+//             <iframe width="560" height="315" src="https://www.youtube.com/embed/${randomTrailer.key}" frameborder="0"></iframe>
+//             <iframe
+//             id="vimeo-player"
+//             src="https://player.vimeo.com/video/236203659"
+//             width="640"
+//             height="360"
+//             frameborder="0"
+//             allowfullscreen
+//             allow="autoplay; encrypted-media"
+//           ></iframe>
+//             `);
+//             instance.show();
+//         });
+>>>>>>> 78e6a7c3dd80b650296864999831a43fda11bb10
 //     }
 // }
 

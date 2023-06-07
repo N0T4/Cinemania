@@ -1,10 +1,25 @@
 .upcoming{
+
     font-weight: 500;
     font-family: 'Roboto';
     font-style: normal;
 }
+@media screen and (min-width: 768) {
+    .upcoming {
+        width: 707px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1280) {
+    .upcoming{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+
 .upcoming-black{
-    color: #B7B7B7;
+    color: var(--light-gray);
 }
 .upcoming-title {
     font-size: 12px;
@@ -13,13 +28,36 @@
     margin-top: 32px;
     margin-bottom: 24px;
 }
-.upcoming-title-film {
+body.light-theme .upcoming-title{
+    color: var(--black);
+}
+
+.upcoming-title-film  {
     font-size: 12px;
     line-height: 1.81px;
     margin-top: 24px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--white-smoke);
+}
+
+body.light-theme .upcoming-title-film{
+    color: var(--black);
+}
+body.light-theme .upcoming-black{
+    color: var(--black);
+}
+body.light-theme .upcoming-genre{
+    color: var(--second-black);
+}
+body.light-theme .upcoming-popularity{
+    color: var(--second-black);
+}
+body.light-theme .upcoming-about{
+    color: var(--black);
+}
+body.light-theme .upcoming-overview{
+    color: var(--second-black);
 }
 .upcoming-release-data{
     color: #F87719;
@@ -30,19 +68,19 @@
 .upcoming-popularity {
     font-size: 16px;
     line-height: 1.18px;
-    color: #FFFFFF;
+    color: var(--white-smoke);
     margin-left: 40px;
 }
 .upcoming-genre{
 font-size: 16px;
-line-height: 1.18px;
-color: #FFFFFF;
+
+color: var(--white-smoke);
 margin-left: 70px;
 }
 .upcoming-white{
     text-transform: uppercase;
-        color: #111;
-        background: #f8f8f8;
+        color: var(--black);
+        background: var(--white-smoke);
         border-radius: 5px;
         padding: 1px 8px;
         font-size: 14px;
@@ -54,7 +92,7 @@ margin-left: 70px;
 .upcoming-about {
     font-size: 16px;
     line-height: 1.18;
-    color: #B7B7B7;
+    color: var(--light-gray);
     margin-top: 20px;
     margin-bottom: 16px;
 }
@@ -62,10 +100,16 @@ margin-left: 70px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.43;
-    color: #F8F8F8;
+    color: var(--white);
     width: 100%;
 }
+.body.light-theme .upcoming-overview {
+    color: var(--second-black);
+}
 .upcoming-li-text{
+    display: flex;
+}
+.upcoming-genreNames{
     display: flex;
 }
 
@@ -77,8 +121,10 @@ margin-left: 70px;
         margin-top: 32px;
         margin-bottom: 24px;
         text-align: start;
-        color: #FFFFFF;
+        color: var(--white-smoke);
     } 
+
+
 .upcoming-title-film {
     font-size: 20px;
     line-height: 1.15;
@@ -91,7 +137,7 @@ margin-left: 70px;
     margin-bottom: 12px;
 }
 .upcoming-genre{
-margin-left: 108px;
+margin-left: 115px;
 }
 .upcoming-popularity{
 margin-left: 78px;
@@ -113,7 +159,7 @@ margin-left: 78px;
     .upcoming-title {
     font-size: 24px;
     line-height: 1.2;
-    margin-top: 44px;
+
     margin-bottom: 28px;
  }
  .upcoming-title-film { 
@@ -134,10 +180,13 @@ margin-left: 78px;
     width: 625px;
     margin-bottom: 20px;
  }
+ .upcoming-release-data {
+     margin-left: 58px;
+ }
  }
  @media (min-width: 1280px) {
     .upcoming-title {
-    margin-top: 60px;
+
     font-size: 28px;
     line-height: 1.2;
  }
@@ -161,7 +210,8 @@ margin-left: 78px;
 }
 .upcoming-overview {
     width: 390px;
-    max-height:  160px;
+    height:  120px;
+    overflow-y: auto;
     margin-bottom: 20px;
 }
 }

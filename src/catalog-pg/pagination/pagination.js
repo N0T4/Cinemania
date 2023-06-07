@@ -6,7 +6,7 @@ const paginationElem = document.querySelector('.tui-pagination');
 const options = {
   totalItems: 1000,
   itemsPerPage: 20,
-  visiblePages: 5,
+  visiblePages: 3,
   page: 1,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',

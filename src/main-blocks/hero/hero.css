@@ -7,6 +7,9 @@
     background-position-x: center;
     background-position-y: center;
 }
+.hero.hero-library{
+    background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-mob-1x.jpg);
+}
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
        only screen and (min--moz-device-pixel-ratio: 2),
        only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -15,6 +18,9 @@
        only screen and (min-resolution: 2dppx) {
     .hero {
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-mob-2x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-mob-2x.jpg);
     }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 3),
@@ -25,6 +31,9 @@
        only screen and (min-resolution: 3dppx) {
     .hero {
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-mob-3x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-mob-3x.jpg);
     }
 }
 .hero-js {
@@ -41,6 +50,9 @@
 .hero-wrapper-text{
     max-width: 228px;
     margin-bottom: 20px;
+}
+.library-hero-wrapper-text{
+    max-width: 249px;
 }
 .title{
     font-weight: 700;
@@ -86,6 +98,9 @@
         height: 372px;
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-tab-1x.jpg);
     }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-tab-1x.jpg);
+    }
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
        only screen and (min--moz-device-pixel-ratio: 2),
        only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -94,6 +109,9 @@
        only screen and (min-resolution: 2dppx) {
     .hero {
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-tab-2x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-tab-2x.jpg);
     }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 3),
@@ -105,6 +123,9 @@
     .hero {
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-tab-3x.jpg);
     }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-tab-3x.jpg);
+    }
 }
     .hero-wrapper {
         padding-top: 62px;
@@ -113,6 +134,10 @@
     .hero-wrapper-text{
         max-width: 357px;
         margin-bottom: 32px;
+    }
+    .library-hero-wrapper-text .title{
+        font-size: 44px;
+        margin-bottom: 8px;
     }
     .title {
         font-size: 38px;
@@ -137,6 +162,13 @@
         height: 660px;
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-desk-1x.jpg);
     }
+    .hero-container{
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-desk-1x.jpg);
+    }
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
        only screen and (min--moz-device-pixel-ratio: 2),
        only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -145,6 +177,9 @@
        only screen and (min-resolution: 2dppx) {
     .hero {
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-desk-2x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-desk-2x.jpg);
     }
 }
 
@@ -157,12 +192,19 @@
     .hero {
         background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-desk-3x.jpg);
     }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-desk-3x.jpg);
+    }
 }
     .hero-wrapper {
         padding-top: 169px;
     }
     .hero-wrapper-text{
         max-width: 464px;
+    }
+    .library-hero-wrapper-text .title{
+        font-size: 64px;
+        margin-bottom: 16px;
     }
     .title {
         font-size: 64px;

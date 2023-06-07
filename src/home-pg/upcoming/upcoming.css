@@ -159,7 +159,7 @@ margin-left: 78px;
     .upcoming-title {
     font-size: 24px;
     line-height: 1.2;
-    margin-top: 44px;
+
     margin-bottom: 28px;
  }
  .upcoming-title-film { 
@@ -186,7 +186,7 @@ margin-left: 78px;
  }
  @media (min-width: 1280px) {
     .upcoming-title {
-    margin-top: 60px;
+
     font-size: 28px;
     line-height: 1.2;
  }

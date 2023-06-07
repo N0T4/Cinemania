@@ -1,6 +1,7 @@
 .list {
     list-style: none;
 }
+
 .catalog-search {
     margin-bottom: 30px;
 }
@@ -19,6 +20,7 @@
     padding-right: 30px;
 
 }
+
 .search {
     display: block;
     box-sizing: border-box;
@@ -32,15 +34,19 @@
     line-height: 1.5;
     color: var(--light-gray);
 }
+
 body.light-theme .catalog-search-input {
-        border: 1px solid var(--gray);
+    border: 1px solid var(--gray);
 }
+
 body.light-theme .catalog-select-year {
-     border: 1px solid var(--gray);
+    border: 1px solid var(--gray);
 }
+
 body.light-theme .catalog-select-country {
-     border: 1px solid var(--gray);
+    border: 1px solid var(--gray);
 }
+
 .catalog-cross-clear-btn {
     left: 55%;
     top: 11%;
@@ -54,18 +60,23 @@ body.light-theme .catalog-select-country {
     font-size: medium;
     cursor: pointer;
 }
+
 .catalog-cross-clear-btn-hide {
     display: none;
 }
+
 .icon-clear-btn {
     stroke: #f8f8f8;
 }
+
 .icon-clear-btn:hover {
     stroke: #F87719;
 }
+
 body.light-theme .icon-clear-btn {
     stroke: #282828;
 }
+
 body.light-theme .icon-clear-btn:hover {
     stroke: #F87719;
 }
@@ -86,9 +97,11 @@ body.light-theme .icon-clear-btn:hover {
 .icon-search {
     stroke: var(--white-smoke);
 }
+
 body.light-theme .icon-search {
- stroke: var(--black);
+    stroke: var(--black);
 }
+
 .catalog-search-btn:hover .icon-search,
 .catalog-search-btn:focus .icon-search {
     stroke: var(--orange);
@@ -100,12 +113,15 @@ body.light-theme .icon-search {
     text-align: center;
     color: var(--white-smoke);
 }
-.warning.light-theme {
-     color: var(--black);
+
+body.light-theme .warning {
+    color: var(--black);
 }
-.choose-movie.light-theme {
-     color: var(--black);
+
+body.light-theme .choose-movie {
+    color: var(--black);
 }
+
 .oops-not-find-hide {
     display: none;
 }
@@ -113,6 +129,12 @@ body.light-theme .icon-search {
 .choose-movie-hide {
     display: none;
 }
+
+.tui-pagination-hide {
+    display: none;
+}
+
+
 
 
 @media screen and (min-width:320px) {
@@ -286,3 +308,5 @@ body.light-theme .icon-search {
     }
 
 }
+
+

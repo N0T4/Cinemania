@@ -7,3 +7,4 @@ import './main-blocks/header/header.js';
 import './main-blocks/hero/API';
 import './main-blocks/hero/hero';
 import './common/stickyButton/sticky.js';
+import './common/modal/trailer-error-mod/trailer-error.js'

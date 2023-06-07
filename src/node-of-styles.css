@@ -17,3 +17,4 @@
 @import url('./main-blocks/footer/footer.scss');
 @import url('./common/modal/film-overview/overview.css');
 @import url('./common/stickyButton/sticky.css');
+@import url('./common/modal/trailer-error-mod/trailer-error.css')

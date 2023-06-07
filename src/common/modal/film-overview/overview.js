@@ -201,18 +201,6 @@ function createMarkupCardModal({
   return markup;
 }
 
-// function getAvailabilityImage({id}) {
-//   const image = [data].map(item => {
-//     if (item === null) {
-//       item = pictureExample;
-//     } else {
-//       item = `https://image.tmdb.org/t/p/w500/${item}`;
-//     }
-//     return item;
-//   });
-//   return image;
-// }
-
 function updateCardModal(markup) {
   refs.modalBodyEl.innerHTML = markup;
 }

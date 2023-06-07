@@ -1,7 +1,9 @@
-import SimpleLightbox from "simplelightbox";
 import * as basicLightbox from 'basiclightbox'
+import 'basiclightbox/dist/basicLightbox.min.css';
 import {getUser, getTrailer} from "./API"
 import {onOpenModal} from "../../common/modal/film-overview/overview"
+import {getTrailer, watchTrailer} from "../../common/modal/trailer-mod/trailer"
+
 console.log(onOpenModal);
 const hero = document.querySelector(".hero")
 const button = document.querySelector('.button-js');
@@ -9,9 +11,7 @@ const button = document.querySelector('.button-js');
 
 window.addEventListener("resize", updateCinemaText);
 button.addEventListener('click', ()=>{window.location.href = 'library.html'});
-// if(button){
-//     updateLibraryHero()
-// }
+
 function updateLibraryHero(){
     if (window.location.href.includes('library')) {
         hero.innerHTML = '';
@@ -73,7 +73,7 @@ function renderHero({results}){
     detailsButton.addEventListener("click", onOpenModal)
 
     console.log("movieTheDay.id",movieTheDay.id);
-    // getTrailer(movieTheDay.id).then(watchTrailer).catch()
+    getTrailer(movieTheDay.id).then(watchTrailer).catch()
 
 }
 
@@ -88,7 +88,7 @@ function showRating(rating) {
 }
 function updateCinemaText() {
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const cinemaText = document.getElementById("cinema-text");
+    let cinemaText = document.getElementById("cinema-text");
     if(cinemaText = null){
         return
     }
@@ -111,22 +111,23 @@ function updateCinemaText() {
 //         const randomTrailer = trailers[randomIndex]
 //         console.log(randomTrailer);
 //         console.log(randomTrailer.key);
-//         watchButton.addEventListener("click", ()=>{
-//             console.log("hello");
-//             const instance = basicLightbox.create(`
-//             <iframe width="560" height="315" src="https://www.youtube.com/embed/${randomTrailer.key}" frameborder="0"></iframe>
-//             <iframe
-//             id="vimeo-player"
-//             src="https://player.vimeo.com/video/236203659"
-//             width="640"
-//             height="360"
-//             frameborder="0"
-//             allowfullscreen
-//             allow="autoplay; encrypted-media"
-//           ></iframe>
-//             `);
-        
-//           instance.show();
-//         })
+//         watchButton.addEventListener('click', function() {
+//             const videoUrl = `https://www.youtube.com/embed/${randomTrailer.key}`;
+//             openVideoModal(videoUrl);
+//           });
 //     }
 // }
+
+// function openVideoModal(videoUrl) {
+//     const instance = basicLightbox.create(`
+//     <div class="modal-video">
+//       <iframe width="560" height="315" src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+//     </div>
+//       `, {
+//       onShow: (instance) => {
+//         instance.element().querySelector('iframe').setAttribute('allow', 'autoplay; encrypted-media');
+//       }
+//     });
+  
+//     instance.show();
+//   }

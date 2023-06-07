@@ -1,8 +1,8 @@
-<<<<<<< hero
+
 import SimpleLightbox from "simplelightbox";
 import * as basicLightbox from 'basiclightbox'
 import {getUser, getTrailer} from "./API"
-import {onOpenModal} from "../../common/modal/film-overview/overview"
+import {onOpenModal} from "./common/modal/film-overview/overview"
 console.log(onOpenModal);
 const hero = document.querySelector(".hero")
 const button = document.querySelector('.button-js');
@@ -76,10 +76,10 @@ function renderHero({results}){
     console.log("movieTheDay.id",movieTheDay.id);
     // getTrailer(movieTheDay.id).then(watchTrailer).catch()
 
-=======
+
 import SimpleLightbox from 'simplelightbox';
 import { getUser, getTrailer } from './API';
-import { onOpenModal } from '../../common/modal/film-overview/overview.js';
+import { onOpenModal } from './common/modal/film-overview/overview.js';
 
 console.log(getUser);
 console.log(getTrailer);

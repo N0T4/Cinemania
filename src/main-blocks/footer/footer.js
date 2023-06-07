@@ -98,7 +98,7 @@ function showStudents(studentsArray, parentElement) {
 function showStudentsModal() {
   const studentsOverlayElement = document.querySelector('.students-overlay');
   studentsOverlayElement.classList.toggle('visually-hidden');
-
+  playMusic();
   closeStudentsModal(studentsOverlayElement);
 }
 
@@ -107,4 +107,10 @@ function closeStudentsModal(element) {
   closeBtnElement.addEventListener('click', () => {
     element.classList.add('visually-hidden');
   });
+}
+
+function playMusic() {
+  const audio = document.querySelector('.students-overlay audio');
+
+  audio.play();
 }

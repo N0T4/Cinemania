@@ -93,7 +93,6 @@ function createCardsCatalog(URL, parentElement, catalogLength = 20) {
       if (catalogLength) {
         response.results.length = catalogLength;
       }
-      console.log(response.results);
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });

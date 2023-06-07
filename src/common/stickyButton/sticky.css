@@ -1,0 +1,35 @@
+.top-link {
+  transition: all var(--transition-dur) var(--transition-func);
+  position: fixed;
+  bottom: 15%;
+  right: 2.5%;
+  display: flex;
+
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(141.22deg, #ffc22667 9.4%, #f8421956 91.91%);
+  box-shadow: 1px 1px 14px 4px rgba(88, 74, 65, 0.42);
+  object-fit: contain;
+}
+
+.top-link:hover {
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+}
+
+.top-link.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.top-link.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.icon-up {
+  fill: #f84119;
+}

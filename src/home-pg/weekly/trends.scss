@@ -5,16 +5,19 @@
     align-items: center;
     margin-bottom: 32px;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 320) {
+      width: 280px;
     margin-bottom: 24px;
   }
 
   @media screen and (min-width: 768px) {
+    width: 707px;
    margin-bottom: 24px;
   }
-
-  @media screen and (min-width: 1200px) {
-margin-bottom: 28px;
+ @media screen and (min-width: 1280px) {
+   width: 1216px;
+   margin-bottom: 28px;
+ 
 
   }
    
@@ -28,7 +31,7 @@ letter-spacing: 0em;
 text-align: left;
 
 
-   @media screen and (max-width: 767px) {
+   @media screen and (max-width: 320px) {
     font-size: 16px;
     line-height: 19px;
   }
@@ -38,13 +41,15 @@ text-align: left;
     line-height: 28px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
 font-size: 28px;
 line-height: 33px;
 
   }
 }
-
+body.light-theme .weekly-trends_title{
+  color: var(--black);
+}
 .gallery-link{
 color: var(--orange);
 font-family: Roboto;

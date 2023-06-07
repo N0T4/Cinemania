@@ -16,3 +16,4 @@
 @import url('./main-blocks/header/header.css');
 @import url('./main-blocks/footer/footer.scss');
 @import url('./common/modal/film-overview/overview.css');
+@import url('./common/stickyButton/sticky.css');

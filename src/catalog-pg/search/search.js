@@ -1,38 +1,41 @@
 import { createCardsCatalog } from '../../common/card/card.js';
 import { renderPhotoCard } from '../../common/card/card.js';
 import Notiflix from 'notiflix';
+Notiflix.Notify.init({
+  info: {
+    background: 'var(--orange)',
+    backOverlayColor: 'var(--black)',
+    textColor: 'var(--black)',
+  },
+});
+import throttle from 'lodash.throttle';
 
 const refs = {
   form: document.querySelector('.catalog-search-form'),
   input: document.querySelector('.catalog-search-input'),
   selectYear: document.getElementById('selectYear'),
   selectCountry: document.getElementById('selectCountry'),
-  clearInputBtn: document.querySelector('.catalog-cross-delete-btn'),
+  clearInputBtn: document.querySelector('.catalog-cross-clear-btn'),
   searchBtn: document.getElementById('searchBtn'),
-  oopsNotFind: document.querySelector('.oops-not-find'),
-  chooseMovie: document.querySelector('.choose-movie'),
+  messageOopsNotFind: document.querySelector('.oops-not-find'),
+  messageСhooseMovie: document.querySelector('.choose-movie'),
+  pagination: document.querySelector('.tui-pagination'),
 };
 const newCatalogElement = document.querySelector('.catalog-section');
-// console.log(refs.form);
-// console.log(refs.input);
-// console.log(refs.selectYear);
-// console.log(refs.selectCountry);
-// console.log(refs.clearInputBtn);
-// console.log(refs.searchBtn);
-// console.log(refs.oopsNotFind);
-// console.log(refs.chooseMovie);
 
-refs.input.addEventListener('input', onInput);
+
+refs.input.addEventListener('input', throttle(onInput, 1000));
 
 function onInput(e) {
-  refs.clearInputBtn.classList.remove('catalog-cross-delete-btn-hide');
+  refs.clearInputBtn.classList.remove('catalog-cross-clear-btn-hide');
   const inputValue = e.target.value.trim();
   console.log(inputValue);
   if (inputValue === '') {
     Notiflix.Notify.info('Please, enter the name of the movie');
-    refs.clearInputBtn.classList.add('catalog-cross-delete-btn-hide');
-    refs.chooseMovie.classList.remove('choose-movie-hide');
-    refs.oopsNotFind.classList.add('oops-not-find-hide');
+    refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
+    refs.messageСhooseMovie.classList.remove('choose-movie-hide');
+    refs.messageOopsNotFind.classList.add('oops-not-find-hide');
+    refs.pagination.classList.add('tui-pagination-hide');
     newCatalogElement.innerHTML = '';
   }
 }
@@ -52,22 +55,18 @@ function onSubmit(event) {
   // console.log(searchQueryInput);
   // console.log(selectYear);
   // console.log(selectCountry);
-  if (searchQueryInput == '') {
-    refs.chooseMovie.classList.remove('choose-movie-hide');
-    newCatalogElement.innerHTML = '';
-  } else {
-    const catalogURL = `https://api.themoviedb.org/3/search/movie?query=${searchQueryInput}&include_adult=false&language=en-US&release_date.gte=${selectYear}&page=1`;
-    // const catalogURL = 'https://api.themoviedb.org/3/search/movie?query=avatar&include_adult=false&language=en-US&page=1';
-
-    newCatalogElement.innerHTML = '';
-    refs.chooseMovie.classList.add('choose-movie-hide');
-    refs.oopsNotFind.classList.add('oops-not-find-hide');
-    refs.clearInputBtn.classList.add('catalog-cross-delete-btn-hide');
-
-    getFilm(catalogURL);
-
-    refs.form.reset();
+  if (searchQueryInput !== '') {
+    const catalogURL = `https://api.themoviedb.org/3/search/movie?query=${searchQueryInput}&include_adult=false&language=en-US&primary_release_year=${selectYear}&region${selectCountry}page=1`;
+    renderMovieInCatalog(catalogURL);
   }
+  if (
+    searchQueryInput === '' &&
+    selectYear !== 'year' || selectCountry === 'country'
+  ) {
+    const onlyYearURL = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_year=${selectYear}&sort_by=popularity.desc`;
+    renderMovieInCatalog(onlyYearURL);
+  }
+ 
 }
 
 refs.clearInputBtn.addEventListener('click', onClickClearCrossBtn);
@@ -76,13 +75,25 @@ function onClickClearCrossBtn(e) {
   e.preventDefault();
   // console.log('клікнули по хрестику');
   refs.form.reset();
-  refs.clearInputBtn.classList.add('catalog-cross-delete-btn-hide');
-  refs.chooseMovie.classList.add('choose-movie-hide');
-  refs.oopsNotFind.classList.add('oops-not-find-hide');
+  refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
+  refs.messageСhooseMovie.classList.add('choose-movie-hide');
+  refs.messageOopsNotFind.classList.add('oops-not-find-hide');
   const catalogTrendingURL =
     'https://api.themoviedb.org/3/trending/all/week?page=1';
   newCatalogElement.innerHTML = '';
   createCardsCatalog(catalogTrendingURL, newCatalogElement);
+}
+
+function renderMovieInCatalog(URL) {
+  newCatalogElement.innerHTML = '';
+
+  refs.messageСhooseMovie.classList.add('choose-movie-hide');
+  refs.messageOopsNotFind.classList.add('oops-not-find-hide');
+  refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
+  getFilm(URL);
+
+  refs.form.reset();
+  refs.pagination.classList.remove('tui-pagination-hide');
 }
 
 function getFilm(URL) {
@@ -102,8 +113,9 @@ function getFilm(URL) {
       if (results.length === 0) {
         console.log('oops');
         newCatalogElement.innerHTML = '';
-        refs.chooseMovie.classList.add('choose-movie-hide');
-        refs.oopsNotFind.classList.remove('oops-not-find-hide');
+        refs.messageСhooseMovie.classList.add('choose-movie-hide');
+        refs.messageOopsNotFind.classList.remove('oops-not-find-hide');
+        refs.pagination.classList.add('tui-pagination-hide');
       }
       results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, newCatalogElement);

@@ -1,8 +1,23 @@
 .upcoming{
+
     font-weight: 500;
     font-family: 'Roboto';
     font-style: normal;
 }
+@media screen and (min-width: 768) {
+    .upcoming {
+        width: 707px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1280) {
+    .upcoming{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+
 .upcoming-black{
     color: #B7B7B7;
 }

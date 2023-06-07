@@ -52,7 +52,9 @@ footer {
   flex-wrap: wrap;
   row-gap: 16px;
   margin: 0 auto;
-
+  background-color: var(--black);
+  outline: 10px solid black;
+  border-radius: 5px;
   @media (min-width: 768px) {
     width: 704px;
     column-gap: 16px;

@@ -1,0 +1,260 @@
+.hero {
+    height: 380px;
+    background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-mob-1x.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+}
+.hero.hero-library{
+    background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-mob-1x.jpg);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+    .hero {
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-mob-2x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-mob-2x.jpg);
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+       only screen and (min--moz-device-pixel-ratio: 3),
+       only screen and (-o-min-device-pixel-ratio: 3/1),
+       only screen and (min-device-pixel-ratio: 3),
+       only screen and (min-resolution: 288dpi),
+       only screen and (min-resolution: 3dppx) {
+    .hero {
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-mob-3x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-mob-3x.jpg);
+    }
+}
+.hero-js {
+    color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-wrapper{
+    padding-top: 40px;
+    padding-left: 20px;
+}
+.hero-wrapper-text{
+    max-width: 228px;
+    margin-bottom: 20px;
+}
+.library-hero-wrapper-text{
+    max-width: 249px;
+}
+.title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+}
+.text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #F8F8F8;
+}
+.hero-btn-wrapper{
+    display: flex;
+
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.16;
+    width: 117px;
+    color: #FFFFFF;
+    border-radius: 74px;
+    border: 1px solid #FFFFFF;
+    margin-right: 8px;
+}
+.hero-btn{
+    border: none;
+    color: #111111;
+    background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: 372px;
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-tab-1x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-tab-1x.jpg);
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+    .hero {
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-tab-2x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-tab-2x.jpg);
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+       only screen and (min--moz-device-pixel-ratio: 3),
+       only screen and (-o-min-device-pixel-ratio: 3/1),
+       only screen and (min-device-pixel-ratio: 3),
+       only screen and (min-resolution: 288dpi),
+       only screen and (min-resolution: 3dppx) {
+    .hero {
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-tab-3x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-tab-3x.jpg);
+    }
+}
+    .hero-wrapper {
+        padding-top: 62px;
+        padding-left: 32px;
+    }
+    .hero-wrapper-text{
+        max-width: 357px;
+        margin-bottom: 32px;
+    }
+    .library-hero-wrapper-text .title{
+        font-size: 44px;
+        margin-bottom: 8px;
+    }
+    .title {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 1.14;
+    }
+
+    .button {
+        font-size: 14px;
+        line-height: 1.4;
+        width: 140px;
+        padding: 12px 24px;
+        justify-content: center;
+    }
+}
+@media (min-width: 1280px) {
+    .hero {
+        height: 660px;
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-desk-1x.jpg);
+    }
+    .hero-container{
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-desk-1x.jpg);
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+    .hero {
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-desk-2x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-desk-2x.jpg);
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+       only screen and (min--moz-device-pixel-ratio: 3),
+       only screen and (-o-min-device-pixel-ratio: 3/1),
+       only screen and (min-device-pixel-ratio: 3),
+       only screen and (min-resolution: 288dpi),
+       only screen and (min-resolution: 3dppx) {
+    .hero {
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/film-desk-3x.jpg);
+    }
+    .hero.hero-library{
+        background-image: linear-gradient(86.77deg, #111111 30.38%, rgba(17, 17, 17, 0) 65.61%), url(../../images/hero/cinema-desk-3x.jpg);
+    }
+}
+    .hero-wrapper {
+        padding-top: 169px;
+    }
+    .hero-wrapper-text{
+        max-width: 464px;
+    }
+    .library-hero-wrapper-text .title{
+        font-size: 64px;
+        margin-bottom: 16px;
+    }
+    .title {
+        font-size: 64px;
+        line-height: 1.17;
+        margin-bottom: 16px;
+    }
+    .text {
+        font-size: 16px;
+        line-height: 1.18;
+    }
+    .button {
+        font-size: 16px;
+        line-height: 1.12;
+        width: 160px;
+    }
+}
+
+/* ===================== */
+
+#rating-stars {
+    display: inline-block;
+    font-size: 0; /* Remove the space between the inline-block elements */
+  }
+
+  #rating-stars .star {
+    display: inline-block;
+    font-size: 24px;
+    color: #ccc;
+    margin-right: 2px;
+  }
+
+  #rating-stars .filled-star {
+    color: #f84119;
+    overflow: hidden; /* Hide overflowing color */
+  }
+
+  @media (max-width: 767px) {
+    #rating-stars .star {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    #rating-stars .star {
+      font-size: 16.8px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    #rating-stars .star {
+      font-size: 22.5px;
+    }
+  }

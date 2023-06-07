@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portal for film searching" />
+    <meta name="keywords" content="films, weekly trends, cinemania" />
 
+  
     <!-- Додавання стилві всіх блоків -->
+   
+  <link href="./images/favicon.svg" rel="icon" type="image/svg+xml" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,6 +50,7 @@
     </section>
 
     <section class="modal-windows">
+      <include scr="./common/modal/trailer-error-mod/trailer-error.html"></include>
       <include src="./common/modal/film-overview/overview.html"></include>
       <include src="./common/modal/footer-mod/footer-mod.html"></include>
       <include
@@ -51,6 +58,7 @@
       ></include>
       <include src="./common/modal/trailer-mod/trailer.html"></include>
     </section>
+    <include src="./common/stickyButton/sticky.html"></include>
   </body>
 
   <!-- Додавання JS бібліотек -->

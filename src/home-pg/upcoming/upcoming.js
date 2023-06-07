@@ -64,10 +64,10 @@ const genreNames = idNames.map(idName => {
     return (genreNames.join(', '))
 }
 
-function createMarkup( {data} )
-{const genreNames = nameGenresId(data.genre_ids);
+function createMarkup({ data }) {
+  const genreNames = nameGenresId(data.genre_ids);
 
-}
+
 
   return `<div class="upcoming-card">
  <div class="upcoming-foto">

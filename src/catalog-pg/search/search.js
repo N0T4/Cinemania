@@ -1,7 +1,7 @@
 import { createCardsCatalog } from '../../common/card/card.js';
 import { renderPhotoCard } from '../../common/card/card.js';
-import Notiflix from 'notiflix'
- Notiflix.Notify.init({
+import Notiflix from 'notiflix';
+Notiflix.Notify.init({
   info: {
     background: 'var(--orange)',
     backOverlayColor: 'var(--black)',
@@ -19,16 +19,10 @@ const refs = {
   searchBtn: document.getElementById('searchBtn'),
   messageOopsNotFind: document.querySelector('.oops-not-find'),
   messageСhooseMovie: document.querySelector('.choose-movie'),
+  pagination: document.querySelector('.tui-pagination'),
 };
 const newCatalogElement = document.querySelector('.catalog-section');
-// console.log(refs.form);
-// console.log(refs.input);
-// console.log(refs.selectYear);
-// console.log(refs.selectCountry);
-// console.log(refs.clearInputBtn);
-// console.log(refs.searchBtn);
-// console.log(refs.messageOopsNotFind);
-// console.log(refs.messageСhooseMovie);
+
 
 refs.input.addEventListener('input', throttle(onInput, 1000));
 
@@ -41,6 +35,7 @@ function onInput(e) {
     refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
     refs.messageСhooseMovie.classList.remove('choose-movie-hide');
     refs.messageOopsNotFind.classList.add('oops-not-find-hide');
+    refs.pagination.classList.add('tui-pagination-hide');
     newCatalogElement.innerHTML = '';
   }
 }
@@ -62,20 +57,16 @@ function onSubmit(event) {
   // console.log(selectCountry);
   if (searchQueryInput !== '') {
     const catalogURL = `https://api.themoviedb.org/3/search/movie?query=${searchQueryInput}&include_adult=false&language=en-US&primary_release_year=${selectYear}&region${selectCountry}page=1`;
-    renderMovie(catalogURL);
+    renderMovieInCatalog(catalogURL);
   }
   if (
     searchQueryInput === '' &&
-    selectYear !== 'year' // selectCountry === 'country'
+    selectYear !== 'year' || selectCountry === 'country'
   ) {
     const onlyYearURL = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_year=${selectYear}&sort_by=popularity.desc`;
-    renderMovie(onlyYearURL);
+    renderMovieInCatalog(onlyYearURL);
   }
-  // else {
-  //   //   refs.messageСhooseMovie.classList.remove('choose-movie-hide');
-  //   //   newCatalogElement.innerHTML = '';
-  //   // }
-  // }
+ 
 }
 
 refs.clearInputBtn.addEventListener('click', onClickClearCrossBtn);
@@ -91,6 +82,18 @@ function onClickClearCrossBtn(e) {
     'https://api.themoviedb.org/3/trending/all/week?page=1';
   newCatalogElement.innerHTML = '';
   createCardsCatalog(catalogTrendingURL, newCatalogElement);
+}
+
+function renderMovieInCatalog(URL) {
+  newCatalogElement.innerHTML = '';
+
+  refs.messageСhooseMovie.classList.add('choose-movie-hide');
+  refs.messageOopsNotFind.classList.add('oops-not-find-hide');
+  refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
+  getFilm(URL);
+
+  refs.form.reset();
+  refs.pagination.classList.remove('tui-pagination-hide');
 }
 
 function getFilm(URL) {
@@ -112,6 +115,7 @@ function getFilm(URL) {
         newCatalogElement.innerHTML = '';
         refs.messageСhooseMovie.classList.add('choose-movie-hide');
         refs.messageOopsNotFind.classList.remove('oops-not-find-hide');
+        refs.pagination.classList.add('tui-pagination-hide');
       }
       results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, newCatalogElement);
@@ -119,15 +123,3 @@ function getFilm(URL) {
     })
     .catch(err => console.error(err));
 }
-function renderMovie(URL) {
-  newCatalogElement.innerHTML = '';
-
-  refs.messageСhooseMovie.classList.add('choose-movie-hide');
-  refs.messageOopsNotFind.classList.add('oops-not-find-hide');
-  refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
-  getFilm(URL);
-
-  refs.form.reset();
-}
-
-

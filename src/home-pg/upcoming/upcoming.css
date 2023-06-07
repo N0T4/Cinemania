@@ -28,6 +28,10 @@
     margin-top: 32px;
     margin-bottom: 24px;
 }
+body.light-theme .upcoming-title{
+    color: var(--black);
+}
+
 .upcoming-title-film  {
     font-size: 12px;
     line-height: 1.81px;
@@ -36,9 +40,7 @@
     text-transform: uppercase;
     color: var(--white-smoke);
 }
-.body.light-theme .upcoming-title-film {
-color: var(--black);
-}
+
 body.light-theme .upcoming-title-film{
     color: var(--black);
 }
@@ -121,9 +123,7 @@ margin-left: 70px;
         text-align: start;
         color: var(--white-smoke);
     } 
-.body.light-theme .upcoming-title{
-    color: var(--black);
-}
+
 
 .upcoming-title-film {
     font-size: 20px;

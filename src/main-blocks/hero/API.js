@@ -11,13 +11,13 @@ export async function getUser() {
       console.error(error);
     }
   }
-export async function getTrailer(id) {
-    try {
-      return await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY}&language=en-US`);
-    } catch (error) {
-      console.error(error);
-    }
-}
+// export async function getTrailer(id) {
+//     try {
+//       return await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY}&language=en-US`);
+//     } catch (error) {
+//       console.error(error);
+//     }
+// }
 
 
 

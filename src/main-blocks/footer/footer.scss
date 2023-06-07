@@ -73,7 +73,9 @@ footer {
   width: 100%;
   height: 100vh;
   padding-top: 40px;
-  background-color: rgba(11, 11, 12, 0.8);
+  transition: opacity var(--transition-dur) var(--transition-func),
+    visibility var(--transition-dur) var(--transition-func);
+  background: linear-gradient(141.22deg, #ffc22682 9.4%, #f8421976 91.91%);
   overflow-y: scroll;
   overflow-x: hidden;
 }

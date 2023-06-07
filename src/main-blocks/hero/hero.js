@@ -88,7 +88,7 @@ function showRating(rating) {
 }
 function updateCinemaText() {
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const cinemaText = document.getElementById("cinema-text");
+    let cinemaText = document.getElementById("cinema-text");
     if(cinemaText = null){
         return
     }

@@ -2,6 +2,13 @@ import noStudentPhoto from '../../images/no-poster-img.png';
 import sharaevskiyPhoto from '../../images/students/sharaevskiy.jpg';
 import puhachPhoto from '../../images/students/puhach.jpg';
 import kalchenkoPhoto from '../../images/students/kalchenko.jpg';
+import badenkovaPhoto from '../../images/students/badenkova.jpg';
+import konovalovaPhoto from '../../images/students/konovalova.jpg';
+import vorozhbitPhoto from '../../images/students/vorozhbit.jpg';
+import neskrobaPhoto from '../../images/students/neskroba.jpg';
+import pokamiestovaPhoto from '../../images/students/pokamiestova.jpg';
+import dimekhinPhoto from '../../images/students/dimekhin.jpg';
+import poliakovPhoto from '../../images/students/poliakov.jpg';
 
 const students = [
   {
@@ -20,49 +27,39 @@ const students = [
     photo: kalchenkoPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Iryna Badenskova',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: badenkovaPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Yana Konovalova',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: konovalovaPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Andriy Vorozhbit',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: vorozhbitPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Oleksandr Neskroba',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: neskrobaPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Hanna Pokamiestova',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: pokamiestovaPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Maksym Dimekhin',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: dimekhinPhoto,
   },
   {
-    studentName: 'NONAME',
+    studentName: 'Volodymyr Poliakov',
     position: 'Front-end developer',
-    photo: noStudentPhoto,
-  },
-  {
-    studentName: 'NONAME',
-    position: 'Front-end developer',
-    photo: noStudentPhoto,
-  },
-  {
-    studentName: 'NONAME',
-    position: 'Front-end developer',
-    photo: noStudentPhoto,
+    photo: poliakovPhoto,
   },
 ];
 

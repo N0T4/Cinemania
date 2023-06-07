@@ -12,7 +12,25 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    opacity: 1;
+    animation-name: fadeOut;
+    animation-duration: var(--transition-dur);
+    animation-timing-function: var(--transition-func);
+    animation-fill-mode: forwards;
 }
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 .body.light-theme .error-modal {
     background: var(--white);
 }
@@ -20,15 +38,14 @@
 .error-text {
     margin-left: 50px;
     font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 28px;
-
-    color:var(--white);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--white);
 }
 
-.body.light-theme .error-text{
+.body.light-theme .error-text {
     color: var(--black);
 }
 
@@ -40,7 +57,7 @@
     height: 318px;
 }
 
-.close-error{
+.close-error {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,8 +66,12 @@
     left: 658px;
     width: 24px;
     height: 24px;
-   
 }
+
 .close-error:hover .icon-error {
     stroke: #F87719;
+}
+
+.hidden {
+    display: none;
 }

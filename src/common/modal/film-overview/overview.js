@@ -16,10 +16,11 @@ const refs = {
 };
 
 async function onOpenModal(event) {
+  console.log(event.target);
   try {
-    if (!event.target.closest('.film-card')) {
-      return;
-    }
+    // if (!event.target.closest('.film-card')) {
+    //   return;
+    // }
 
     event.preventDefault();
 
@@ -29,6 +30,7 @@ async function onOpenModal(event) {
 
     const targetEl = event.target;
     const idEl = targetEl.parentElement;
+
     const movieId = idEl.dataset.id;
 
     const results = await fetchMovieById(movieId);

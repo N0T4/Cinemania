@@ -1,4 +1,3 @@
-
 import SimpleLightbox from "simplelightbox";
 import * as basicLightbox from 'basiclightbox'
 import {getUser, getTrailer} from "./API"
@@ -89,7 +88,7 @@ function showRating(rating) {
 function updateCinemaText() {
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let cinemaText = document.getElementById("cinema-text");
-    if(cinemaText = null){
+    if(cinemaText === null){
         return
     }
   

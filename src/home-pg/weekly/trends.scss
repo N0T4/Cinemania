@@ -47,7 +47,9 @@ line-height: 33px;
 
   }
 }
-
+body.light-theme .weekly-trends_title{
+  color: var(--black);
+}
 .gallery-link{
 color: var(--orange);
 font-family: Roboto;

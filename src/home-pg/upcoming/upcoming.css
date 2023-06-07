@@ -36,6 +36,24 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+body.light-theme .upcoming-title-film{
+    color: var(--black);
+}
+body.light-theme .upcoming-black{
+    color: var(--black);
+}
+body.light-theme .upcoming-genre{
+    color: var(--second-black);
+}
+body.light-theme .upcoming-popularity{
+    color: var(--second-black);
+}
+body.light-theme .upcoming-about{
+    color: var(--black);
+}
+body.light-theme .upcoming-overview{
+    color: var(--second-black);
+}
 .upcoming-release-data{
     color: #F87719;
     font-size: 16px;

@@ -1,8 +1,23 @@
 .upcoming{
+
     font-weight: 500;
     font-family: 'Roboto';
     font-style: normal;
 }
+@media screen and (min-width: 768) {
+    .upcoming {
+        width: 707px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1280) {
+    .upcoming{
+        width: 1216px;
+        margin: 0 auto;
+    }
+}
+
 .upcoming-black{
     color: var(--light-gray);
 }
@@ -23,6 +38,24 @@
 }
 .body.light-theme .upcoming-title-film {
 color: var(--black);
+}
+body.light-theme .upcoming-title-film{
+    color: var(--black);
+}
+body.light-theme .upcoming-black{
+    color: var(--black);
+}
+body.light-theme .upcoming-genre{
+    color: var(--second-black);
+}
+body.light-theme .upcoming-popularity{
+    color: var(--second-black);
+}
+body.light-theme .upcoming-about{
+    color: var(--black);
+}
+body.light-theme .upcoming-overview{
+    color: var(--second-black);
 }
 .upcoming-release-data{
     color: #F87719;

@@ -92,8 +92,7 @@ body.light-theme {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.first-section {
-}
+
 
 .second-section {
   margin-top: 70px;
@@ -125,17 +124,18 @@ body.light-theme {
 }
 
 .main-container {
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 280;
+
   margin: 0 auto;
 }
 
 @media screen and (min-width: 320px) {
   .main-container {
-    width: 300px;
+    width: 280px;
     margin: 0 auto;
   }
 }
+
 
 @media screen and (min-width: 768px) {
   .main-container {
@@ -144,22 +144,11 @@ body.light-theme {
   }
 }
 
+
 @media screen and (min-width: 1280px) {
   .main-container {
     width: 1278px;
     margin: 0 auto;
   }
-}
-
-.home-pg-fourth-section {
-}
-
-.catalog-pg-third-section {
-}
-
-.library-pg-third-section {
-}
-
-.last-section {
 }
 

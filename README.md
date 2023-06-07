@@ -11,5 +11,4 @@ For developing were involved 13 people, each of whom, did his best for create th
 3. Moreover the whole site has been adapted for all types of devices, such as `mobile`,`tablet` and `desktop`. You can enjoy our site anywhere and anytime.
 4. The last, but not least, feature of our site, when we were developing it, all main colors were set to `:root` which means that you can change any monent, change  any color you want without issues.
 
-There is a small illustration of which colors, fonts, and styles we used in our project.
-<place fro pictures>
+

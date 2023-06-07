@@ -93,7 +93,6 @@ function createCardsCatalog(URL, parentElement, catalogLength = 20) {
       if (catalogLength) {
         response.results.length = catalogLength;
       }
-      console.log(response.results);
       response.results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });
@@ -104,4 +103,4 @@ function createCardsCatalog(URL, parentElement, catalogLength = 20) {
 
 const card = new CardInfo();
 
-export { card, renderPhotoCard, createCardsCatalog };
+export { card, renderPhotoCard, createCardsCatalog, img };

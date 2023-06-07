@@ -1,3 +1,4 @@
+
 const genres = [
   {id: 28,name: "Action"},
   {id: 12,name: "Adventure"},
@@ -21,17 +22,20 @@ const genres = [
 ]
 
 
+
 const fetch = require('node-fetch');
 const url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZGE2Mzc1Njc2Yzg4MmNkNzI2M2JlODllNDgyNzZhYSIsInN1YiI6IjY0N2IwODA1Y2FlZjJkMDBkZjg4NmEyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.y3unbtieg939bn1NjBgnTgTaFVHKi0UnTf-vDtqQanM'
-  }
+    Authorization:
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZGE2Mzc1Njc2Yzg4MmNkNzI2M2JlODllNDgyNzZhYSIsInN1YiI6IjY0N2IwODA1Y2FlZjJkMDBkZjg4NmEyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.y3unbtieg939bn1NjBgnTgTaFVHKi0UnTf-vDtqQanM',
+  },
 };
 fetch(url, options)
   .then(res => res.json())
+
     .then(json => {
       if (json.results.length >= 1) {
         const randomMovie = getRandom(1, 20)
@@ -40,12 +44,15 @@ fetch(url, options)
         upcomingRender.insertAdjacentHTML('beforeend', createdMarkup);
          }
     })
+
+
   .catch(err => console.error('error:' + err));
 
 function getRandom(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+
 }   
 const upcomingRender = document.querySelector(".container-upcoming");
 
@@ -59,6 +66,9 @@ const genreNames = idNames.map(idName => {
 
 function createMarkup( {data} )
 {const genreNames = nameGenresId(data.genre_ids);
+
+}
+
   return `<div class="upcoming-card">
  <div class="upcoming-foto">
 <picture class="upcoming-load-foto">
@@ -92,5 +102,4 @@ function createMarkup( {data} )
             <p class="upcoming-overview">${data.overview}</p>
             <button class="upcoming-button" type="button">Add to Library</button>
         </div>`;
-
 }

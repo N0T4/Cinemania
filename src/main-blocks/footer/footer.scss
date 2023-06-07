@@ -97,3 +97,7 @@ footer {
   top: 48px;
   right: 48px;
 }
+.students-overlay audio {
+  position: absolute;
+  z-index: 999;
+}

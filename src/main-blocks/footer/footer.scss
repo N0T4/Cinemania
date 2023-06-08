@@ -29,17 +29,21 @@ footer {
   margin: 0 10px;
   fill: var(--orange);
 }
+
 //temporary
 .footer-heart-icon:hover {
   stroke: none;
 }
+
 //_______________
 .goit-students {
   text-decoration: underline;
 }
+
 .footer-copyright {
   margin-right: 7px;
 }
+
 .footer-wrapper.first-string {
   display: flex;
   column-gap: 5px;
@@ -59,6 +63,7 @@ footer {
   background-color: var(--black);
   outline: 10px solid black;
   border-radius: 5px;
+
   @media (min-width: 768px) {
     width: 704px;
     column-gap: 16px;
@@ -84,8 +89,9 @@ footer {
   background: #000c;
   overflow-y: scroll;
   overflow-x: hidden;
-  
+
 }
+
 .students-header {
   margin-bottom: 20px;
   font-size: 28px;
@@ -93,6 +99,7 @@ footer {
   text-transform: uppercase;
   text-align: center;
 }
+
 .footer-students .film-card__genre {
   max-width: none;
 }
@@ -102,6 +109,7 @@ footer {
   top: 48px;
   right: 48px;
 }
+
 .students-overlay audio {
   position: absolute;
   z-index: 999;

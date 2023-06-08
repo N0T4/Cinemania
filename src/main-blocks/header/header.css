@@ -68,6 +68,7 @@ body.light-theme .header {
 }
 
 .theme-switcher {
+  
   width: 60px;
   height: 24px;
   -webkit-appearance: none;
@@ -75,30 +76,42 @@ body.light-theme .header {
   background: var(--liner);
   border-radius: 20px;
   transition: var(--transition-func) var(--transition-dur);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0.2);
+  
 }
 
-.theme-switcher:checked {
-  background: var(--revers-liner);
-}
+
 
 .theme-switcher:before {
   content: '';
   position: absolute;
-  width: 24px;
-  height: 24px;
+    width: 17px;
+    height: 17px;
+    left: 10px;
+    top: 6.5px;
   border-radius: 20px;
-  top: 3;
-  left: 4;
   background: var(--white);
   transition: var(--transition-func) var(--transition-dur);
   transform: scale(1.1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .theme-switcher:checked:before {
   left: 40px;
-  background: var(--black);
+
+}
+
+.sun{
+  pointer-events: none;
+  position:absolute;
+    left: 40px;
+    top: 6.5px;
+}
+
+.half-moon{
+  pointer-events: none;
+  position: absolute;
+  left: 10px;
+    top: 6.5px;
 }
 
 

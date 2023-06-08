@@ -67,9 +67,9 @@ function onSubmit(event) {
   pagination.off('afterMove', getByTrendingMovie);
   // pagination.off('afterMove', getRenderByQuery);
 
-  searchQueryInput = event.currentTarget.elements.searchQuery.value.trim();
-  selectYear = event.currentTarget.elements.selectedYear.value;
-  selectCountry = event.currentTarget.elements.selectedCountry.value.toString();
+  const searchQueryInput = event.currentTarget.elements.searchQuery.value.trim();
+  const selectYear = event.currentTarget.elements.selectedYear.value;
+  const selectCountry = event.currentTarget.elements.selectedCountry.value.toString();
 
   // console.log(searchQueryInput);
   // console.log(selectYear);

@@ -100,6 +100,7 @@ function showStudentsModal() {
   const studentsOverlayElement = document.querySelector('.students-overlay');
   studentsOverlayElement.classList.toggle('visually-hidden');
   playMusic();
+  document.body.style.overflow = 'hidden';
   closeStudentsModal(studentsOverlayElement);
 }
 
@@ -108,6 +109,7 @@ function closeStudentsModal(element) {
   closeBtnElement.addEventListener('click', () => {
     element.classList.add('visually-hidden');
     audio.pause();
+    document.body.style.overflow = 'scroll';
   });
 }
 

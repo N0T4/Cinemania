@@ -1,0 +1,18 @@
+.my-library-section {
+  width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 704px;
+    column-gap: 16px;
+    row-gap: 28px;
+  }
+
+  @media (min-width: 1280px) {
+    row-gap: 32px;
+    width: 1217px;
+  }
+}

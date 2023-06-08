@@ -8,7 +8,7 @@
 @import url('./catalog-pg/catalog/catalog.scss');
 @import url('./home-pg/weekly/trends.scss');
 @import url('./home-pg/upcoming/upcoming.css');
-@import url('./library-save/saved-films/saved.css');
+@import url('./library-save/saved-films/saved.scss');
 @import url('./library-save/load-more/load-more.css');
 @import url('./library-save/genres/genres.css');
 @import url('./library-save/add-to-library/add.css');
@@ -17,4 +17,4 @@
 @import url('./main-blocks/footer/footer.scss');
 @import url('./common/modal/film-overview/overview.css');
 @import url('./common/stickyButton/sticky.css');
-@import url('./common/modal/trailer-error-mod/trailer-error.css')
+@import url('./common/modal/trailer-error-mod/trailer-error.css');

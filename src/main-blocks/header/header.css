@@ -194,9 +194,7 @@ body.light-theme .header {
 @media screen and (max-width: 1280px) {
   
 
-  body.light-theme .span {
-    color: var(--second-black);
-  }
+ 
 
   .span:hover,
   :focus {
@@ -234,6 +232,10 @@ body.light-theme .header {
   color: var(--gray);
   transition: color var(--transition-func) var(--transition-dur);
 }
+
+ body.light-theme .span {
+   color: var(--second-black);
+ }
 
 .index-page-body .header__link-index,
 .catalog-page-body .header__link-catalog,

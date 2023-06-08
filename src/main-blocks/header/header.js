@@ -20,15 +20,19 @@ function removeClass(e) {
   }
 }
 
-
 const header = document.querySelector('header');
 
-
 window.addEventListener('scroll', function() {
-
-  if (window.scrollY > 1) { 
-    header.style.position = 'fixed';
-  } else { 
+  if (window.innerWidth >= 768) {
+    if (window.scrollY > 1) { 
+      header.style.position = 'fixed';
+    } else { 
+      header.style.position = 'static';
+    }
+  } else if (window.innerWidth < 320) {
     header.style.position = 'static';
   }
 });
+
+
+

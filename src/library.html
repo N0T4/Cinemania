@@ -7,7 +7,7 @@
     <meta name="description" content="Website for the film searching" />
 
     <!-- Додавання стилві всіх блоків -->
-      <link href="./images/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="./images/favicon.svg" rel="icon" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,10 +22,12 @@
     <title>My library</title>
   </head>
 
-  <body>
-    <section class="first-section">
+
+
+  <body class="library-page-body">
+
       <include src="./main-blocks/header/header.html"></include>
-    </section>
+
 
     <section class="second-section">
       <include src="main-blocks/hero/hero.html"></include>
@@ -40,12 +42,14 @@
       </div>
     </section>
 
-    <section class="last-section">
+ 
       <include src="./main-blocks/footer/footer.html"></include>
-    </section>
+
 
     <section class="modal-windows">
-      <include scr="./common/modal/trailer-error-mod/trailer-error.html"></include>
+      <include
+        scr="./common/modal/trailer-error-mod/trailer-error.html"
+      ></include>
       <include src="./common/modal/film-overview/overview.html"></include>
       <include src="./common/modal/footer-mod/footer-mod.html"></include>
       <include

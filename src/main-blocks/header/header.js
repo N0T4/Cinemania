@@ -19,3 +19,16 @@ function removeClass(e) {
     document.body.removeEventListener('click', removeClass);
   }
 }
+
+
+const header = document.querySelector('header');
+
+
+window.addEventListener('scroll', function() {
+
+  if (window.scrollY > 1) { 
+    header.style.position = 'fixed';
+  } else { 
+    header.style.position = 'static';
+  }
+});

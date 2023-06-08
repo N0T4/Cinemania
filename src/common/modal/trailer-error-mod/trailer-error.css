@@ -1,8 +1,10 @@
 .error-modal {
+
+    z-index: 100;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 700px;
-    height: 400px;
+   
 
     background: var(--black);
     box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
@@ -19,42 +21,109 @@
     animation-timing-function: var(--transition-func);
     animation-fill-mode: forwards;
 }
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
+@media screen and (min-width: 320)
+ {
+    .error-modal{
+        align-items:start;
+        width: 280px;
+            height: 289px;
     }
 
-    100% {
-        opacity: 0;
-        display: none;
+    .error-text {
+        font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        margin-left: 33px;
+        margin-top: 39px;
+        margin-bottom: 0;
+    }
+
+    .error-img {
+        width: 159px;
+        height: 153px;
+        left: 61px;
+        top: 128px;
+    }
+
+    .close-error {
+        bottom: 248px;
+        left: 238px;
     }
 }
 
-.body.light-theme .error-modal {
+@media screen and (min-width: 768) {
+    .error-modal {
+        width: 609px;
+        height: 400px;
+
+    }
+    .error-text{
+        margin-left: 44px;
+        margin-bottom: 60px;
+    }
+    .error-img{
+        width: 296px;
+        height: 260px;
+        left: 303px;
+        top: 124px;
+    }
+    .close-error{
+        bottom: 358px;
+        left: 558px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .error-modal {
+        width: 700px;
+        height: 400px;
+
+    }
+
+    .error-text {
+        margin-left: 50px;
+        margin-bottom: 0;
+    
+    }
+
+    .error-img {
+    width: 363px;
+        height: 318px;
+        left: 337px;
+        top: 77px;
+    }
+
+    .close-error {
+    bottom: 358px;
+        left: 658px;
+    }
+}
+
+body.light-theme .error-modal {
     background: var(--white);
 }
 
 .error-text {
-    margin-left: 50px;
+   
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    color: var(--white);
+
+   
+
+    color: #FFFFFF;
 }
 
-.body.light-theme .error-text {
+body.light-theme .error-text {
     color: var(--black);
 }
 
 .error-img {
     position: absolute;
-    top: 77px;
-    left: 337px;
-    width: 363px;
-    height: 318px;
+
 }
 
 .close-error {
@@ -62,8 +131,6 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 358px;
-    left: 658px;
     width: 24px;
     height: 24px;
 }

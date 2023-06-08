@@ -1,6 +1,9 @@
 import {getUser} from "./API"
 import {onOpenModal} from "../../common/modal/film-overview/overview"
+
 import {getTrailer, watchTrailer, openNoTrailerModal} from "../../common/modal/trailer-mod/trailer"
+
+
 
 const hero = document.querySelector(".hero")
 const button = document.querySelector('.button-js');
@@ -98,4 +101,5 @@ function updateCinemaText() {
       cinemaText.textContent = "Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers.";
     }
 }
+
 

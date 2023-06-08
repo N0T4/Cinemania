@@ -199,6 +199,7 @@ body.light-theme .film-about-text {
 body.light-theme .film-rating {
   background-color: rgba(248, 159, 25, 0.68);
 }
+
 body.light-theme .film-vote-count {
   background-color: rgba(248, 159, 25, 0.68);
 }
@@ -275,6 +276,7 @@ body.light-theme .film-button:focus {
     height: 400px;
     margin: 0;
   }
+
   .film-non-image {
     max-width: 294px;
     height: 300px;
@@ -290,6 +292,7 @@ body.light-theme .film-button:focus {
   .film-information {
     max-width: 301px;
   }
+
   .film-title {
     font-size: 24px;
     margin-bottom: 26px;
@@ -325,6 +328,7 @@ body.light-theme .film-button:focus {
     height: 478px;
     margin: 0;
   }
+
   .film-non-image {
     max-width: 375px;
     height: 400px;

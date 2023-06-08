@@ -29,6 +29,6 @@
                         </div>
             <h2 class="upcoming-about">ABOUT</h2>
             <p class="upcoming-overview">${e.overview}</p>
-            <button type="button" class="film-button js-watch">Add to my library</button>
+            <button class="upcoming-button" type="button">Add to Library</button>
         </div>`}({data:s});o.insertAdjacentHTML("beforeend",l)}}).catch(e=>console.error("error:"+e));let o=document.querySelector(".container-upcoming");var s=n("eswKy");let l=document.querySelector(".weekly-trends_gallery");(0,s.createCardsCatalog)("https://api.themoviedb.org/3/trending/all/week?page=1&per_page=20",l,3),n("j0U4W")}();
-//# sourceMappingURL=index.d4e84a97.js.map
+//# sourceMappingURL=index.998e741e.js.map

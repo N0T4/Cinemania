@@ -85,9 +85,8 @@ body.light-theme .header:before {
 
 @media screen and (min-width: 768px) {
   .logo__link span {
-      display: inline-block;
-    }
-    
+    display: inline-block;
+  }
 
   .logo__link span {
     font-family: 'Roboto';
@@ -132,8 +131,6 @@ body.light-theme .header:before {
     z-index: 2;
   }
 }
-
-
 
 @media screen and (max-width: 320px) {
   .mobile__menu {
@@ -225,3 +222,8 @@ body.light-theme .header:before {
   }
 }
 
+.index-page-body .header__link-index,
+.catalog-page-body .header__link-catalog,
+.library-page-body .header__link-library {
+  color: var(--orange);
+}

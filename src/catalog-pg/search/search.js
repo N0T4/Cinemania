@@ -9,7 +9,7 @@ Notiflix.Notify.init({
 });
 import throttle from 'lodash.throttle';
 import createPagination from '../pagination/pagination.js';
-import { Unsplashapi } from './api.js';
+import { MovieApi } from './api.js';
 
 const refs = {
   form: document.querySelector('.catalog-search-form'),
@@ -42,44 +42,22 @@ function onInput(e) {
 
 const pagination = createPagination();
 const pageForPagination = pagination.getCurrentPage();
-console.log(pageForPagination);
+// console.log(pageForPagination);
 
-const services = new Unsplashapi();
+const services = new MovieApi();
 
 services
   .getTrendingMovieData(pageForPagination)
   .then(({ results, total_results }) => {
-    console.log(results);
-    console.log(total_results);
-    console.log(newCatalogElement);
-    results.forEach(result => {
-      renderPhotoCard(result, newCatalogElement);
-      console.log('успіх тренди');
-    });
+    // console.log(results);
+    // console.log(total_results);
+    // console.log(newCatalogElement);
+    renderFromResults(results);
   })
   .catch(error => {
     console.log(error);
   });
-
 pagination.on('afterMove', getByTrendingMovie);
-
-function getByTrendingMovie(e) {
-  const currentPage = e.page;
-  console.log(currentPage);
-  services
-    .getTrendingMovieData(currentPage)
-    .then(({ results, total_results }) => {
-      console.log(results);
-      console.log(total_results);
-      console.log(newCatalogElement);
-      newCatalogElement.innerHTML = '';
-      results.forEach(result => {
-        renderPhotoCard(result, newCatalogElement);
-        console.log('успіх');
-      });
-    })
-    .catch(error => console.log(error));
-}
 
 refs.form.addEventListener('submit', onSubmit);
 
@@ -87,22 +65,20 @@ function onSubmit(event) {
   event.preventDefault();
 
   pagination.off('afterMove', getByTrendingMovie);
-
-  newCatalogElement.innerHTML = '';
+  // pagination.off('afterMove', getRenderByQuery);
 
   searchQueryInput = event.currentTarget.elements.searchQuery.value.trim();
   selectYear = event.currentTarget.elements.selectedYear.value;
   selectCountry = event.currentTarget.elements.selectedCountry.value.toString();
 
-  console.log(searchQueryInput);
-  console.log(selectYear);
-  console.log(selectCountry);
+  // console.log(searchQueryInput);
+  // console.log(selectYear);
+  // console.log(selectCountry);
 
   services.searchQuery = searchQueryInput;
   services.selectYear = selectYear;
   services.selectCountry = selectCountry;
 
-  pagination.off('afterMove', getRenderByQuery);
   console.log(pageForPagination);
   if (searchQueryInput !== '') {
     services
@@ -118,86 +94,32 @@ function onSubmit(event) {
           refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
         }
 
-        // pagination.reset(total_results);
-        console.log(results);
-        console.log(total_results);
-        console.log(newCatalogElement);
-        newCatalogElement.innerHTML = '';
-        results.forEach(result => {
-          renderPhotoCard(result, newCatalogElement);
-          console.log('успіх пошук квері');
-        });
+        pagination.reset(total_results);
+        // console.log(results);
+        // console.log(total_results);
+        // console.log(newCatalogElement);
+        renderFromResults(results);
       })
       .catch(error => console.log(error));
-    refs.messageOopsNotFind.classList.add('oops-not-find-hide');
-    refs.messageСhooseMovie.classList.add('choose-movie-hide');
-    refs.pagination.classList.remove('tui-pagination-hide');
-    pagination.on('afterMove', getRenderByQuery);
-  } else if (
-    searchQueryInput === '' &&
-    selectYear !== 'year' &&
-    selectCountry == 'country'
-  ) {
-    pagination.off('afterMove', getRenderByQuery);
+    hideNotificationShowPagination();
 
-    const onlyYearURL = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_year=${selectYear}&sort_by=popularity.desc`;
-    console.log(selectYear);
+    pagination.on('afterMove', getRenderByQuery);
+  } else if (searchQueryInput === '') {
     services
-      .getFilmYearData(onlyYearURL, pageForPagination)
+      .getFilmYearData(pageForPagination)
       .then(({ results, total_results }) => {
-        // pagination.reset(total_results);
+        pagination.reset(total_results);
         console.log(results);
         console.log(total_results);
         console.log(newCatalogElement);
-        newCatalogElement.innerHTML = '';
-        results.forEach(result => {
-          refs.messageOopsNotFind.classList.add('oops-not-find-hide');
-          refs.pagination.classList.remove('tui-pagination-hide');
-          renderPhotoCard(result, newCatalogElement);
-          console.log('успіх перша сторінка рік');
-        });
+        renderFromResults(results);
+        // console.log('успіх перша сторінка рік');
       })
       .catch(error => console.log(error));
+    hideNotificationShowPagination();
 
     pagination.on('afterMove', getRenderByYear);
   }
-  
-}
-
-
-function getRenderByQuery(event) {
-  const currentPage = event.page;
-  services
-    .getMoviesByQueryData(currentPage)
-    .then(({ results, total_results }) => {
-      console.log(results);
-      console.log(total_results);
-      console.log(newCatalogElement);
-      newCatalogElement.innerHTML = '';
-      results.forEach(result => {
-        renderPhotoCard(result, newCatalogElement);
-        console.log('успіх наступна сторінка квері');
-      });
-    })
-    .catch(error => console.log(error));
-}
-function getRenderByYear(event) {
-  const currentPage = event.page;
-  console.log(currentPage)
-  const onlyYearURL = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_year=${selectYear}&page=${currentPage}sort_by=popularity.desc`;
-  services
-    .getFilmYearData(onlyYearURL, currentPage)
-    .then(({ results, total_results }) => {
-      console.log(results);
-      console.log(total_results);
-      console.log(newCatalogElement);
-      newCatalogElement.innerHTML = '';
-      results.forEach(result => {
-        renderPhotoCard(result, newCatalogElement);
-        console.log('успіх рік пагінація');
-      });
-    })
-    .catch(error => console.log(error));
 }
 
 refs.clearInputBtn.addEventListener('click', onClickClearCrossBtn);
@@ -207,8 +129,7 @@ function onClickClearCrossBtn(e) {
   // console.log('клікнули по хрестику');
   refs.form.reset();
   refs.clearInputBtn.classList.add('catalog-cross-clear-btn-hide');
-  refs.messageСhooseMovie.classList.add('choose-movie-hide');
-  refs.messageOopsNotFind.classList.add('oops-not-find-hide');
+  hideNotificationShowPagination();
 
   services
     .getTrendingMovieData(pageForPagination)
@@ -216,14 +137,68 @@ function onClickClearCrossBtn(e) {
       console.log(results);
       console.log(total_results);
       console.log(newCatalogElement);
-      results.forEach(result => {
-        renderPhotoCard(result, newCatalogElement);
-        console.log('успіх');
-      });
+      renderFromResults(results);
+      //  console.log('успіх');
     })
     .catch(error => {
       console.log(error);
     });
-  refs.pagination.classList.remove('tui-pagination-hide');
+
   pagination.on('afterMove', getByTrendingMovie);
-  }
+}
+
+function renderFromResults(results) {
+  newCatalogElement.innerHTML = '';
+  results.forEach(result => {
+    renderPhotoCard(result, newCatalogElement);
+    console.log('успіх тренди');
+  });
+}
+
+function getByTrendingMovie(e) {
+  const currentPage = e.page;
+  console.log(currentPage);
+  services
+    .getTrendingMovieData(currentPage)
+    .then(({ results, total_results }) => {
+      // console.log(results);
+      // console.log(total_results);
+      // console.log(newCatalogElement);
+      renderFromResults(results);
+    })
+    .catch(error => console.log(error));
+}
+function getRenderByQuery(event) {
+  const currentPage = event.page;
+  services
+    .getMoviesByQueryData(currentPage)
+    .then(({ results, total_results }) => {
+      console.log(results);
+      console.log(total_results);
+      console.log(newCatalogElement);
+      renderFromResults(results);
+      console.log('успіх наступна сторінка квері');
+    })
+    .catch(error => console.log(error));
+}
+
+function getRenderByYear(event) {
+  const currentPage = event.page;
+  services
+    .getFilmYearData(currentPage)
+    .then(({ results, total_results }) => {
+      console.log(results);
+      console.log(total_results);
+      console.log(newCatalogElement);
+      renderFromResults(results);
+
+      console.log('успіх рік пагінація');
+    })
+    .catch(error => console.log(error));
+}
+
+function hideNotificationShowPagination() {
+  refs.messageСhooseMovie.classList.add('choose-movie-hide');
+  refs.messageOopsNotFind.classList.add('oops-not-find-hide');
+  refs.pagination.classList.remove('tui-pagination-hide');
+}

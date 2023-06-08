@@ -21,12 +21,22 @@
     animation-timing-function: var(--transition-func);
     animation-fill-mode: forwards;
 }
-@media screen and (min-width: 320
-) {
-  
+@media screen and (min-width: 320)
+ {
+    .error-modal{
+        align-items:start;
+        width: 280px;
+            height: 289px;
+    }
 
     .error-text {
+        font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
         margin-left: 33px;
+        margin-top: 39px;
         margin-bottom: 0;
     }
 
@@ -38,8 +48,8 @@
     }
 
     .close-error {
-        bottom: 258px;
-        left: 158px;
+        bottom: 248px;
+        left: 238px;
     }
 }
 
@@ -72,21 +82,21 @@
     }
 
     .error-text {
-        margin-left: 33px;
-            margin-bottom: 0;
+        margin-left: 50px;
+        margin-bottom: 0;
     
     }
 
     .error-img {
-    width: 159px;
-        height: 153px;
-        left: 61px;
-        top: 128px;
+    width: 363px;
+        height: 318px;
+        left: 337px;
+        top: 77px;
     }
 
     .close-error {
-    bottom: 258px;
-        left: 158px;
+    bottom: 358px;
+        left: 658px;
     }
 }
 

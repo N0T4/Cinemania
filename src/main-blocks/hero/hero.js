@@ -1,17 +1,15 @@
-import SimpleLightbox from "simplelightbox";
-import * as basicLightbox from 'basiclightbox'
-import {getUser, getTrailer} from "./API"
+import {getUser} from "./API"
 import {onOpenModal} from "../../common/modal/film-overview/overview"
-console.log(onOpenModal);
+import {getTrailer, watchTrailer} from "../../common/modal/trailer-mod/trailer"
+console.log("getrailer from trailer js",getTrailer);
+
 const hero = document.querySelector(".hero")
 const button = document.querySelector('.button-js');
 
 
 window.addEventListener("resize", updateCinemaText);
 button.addEventListener('click', ()=>{window.location.href = 'library.html'});
-// if(button){
-//     updateLibraryHero()
-// }
+
 function updateLibraryHero(){
     if (window.location.href.includes('library')) {
         hero.innerHTML = '';
@@ -28,8 +26,6 @@ function updateLibraryHero(){
       }
 }
 getUser().then(res =>{
-    console.log("res in getUser.then",res.results);
-    console.log("res length in getUser.then",res.results.length);
     if(res.results.length === 0){
         updateCinemaText()
     } else{
@@ -72,11 +68,9 @@ function renderHero({results}){
     const detailsButton = document.querySelector(".modal-btn")
     detailsButton.addEventListener("click", onOpenModal)
 
-    console.log("movieTheDay.id",movieTheDay.id);
-    // getTrailer(movieTheDay.id).then(watchTrailer).catch()
+    getTrailer(movieTheDay.id).then(watchTrailer).catch()
 }
 function showRating(rating) {
-  console.log('rating inside showRating', rating);
   const filledStarsWidth = (rating / 10) * 100;
   let starsHTML =
     '<div class="star filled-star" style="width: ' + filledStarsWidth + '%;">';
@@ -91,7 +85,6 @@ function updateCinemaText() {
     if(cinemaText === null){
         return
     }
-  
     if (screenWidth >= 768) {
       cinemaText.textContent = "Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.";
     }  else {
@@ -99,33 +92,3 @@ function updateCinemaText() {
     }
   }
 
-
-// function watchTrailer({data}){
-//     const watchButton = document.querySelector('.hero-button-js');
-//     console.log("function watch trailer:",data);
-//     const trailers = data.results;
-//     if(trailers.length !== 0){
-//         console.log("если не равно нулю",trailers);
-//         const randomIndex = Math.floor(Math.random() * (trailers.length- 1)) ;
-//         const randomTrailer = trailers[randomIndex]
-//         console.log(randomTrailer);
-//         console.log(randomTrailer.key);
-//         watchButton.addEventListener("click", ()=>{
-//             console.log("hello");
-//             const instance = basicLightbox.create(`
-//             <iframe width="560" height="315" src="https://www.youtube.com/embed/${randomTrailer.key}" frameborder="0"></iframe>
-//             <iframe
-//             id="vimeo-player"
-//             src="https://player.vimeo.com/video/236203659"
-//             width="640"
-//             height="360"
-//             frameborder="0"
-//             allowfullscreen
-//             allow="autoplay; encrypted-media"
-//           ></iframe>
-//             `);
-        
-//           instance.show();
-//         })
-//     }
-// }

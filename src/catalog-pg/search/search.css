@@ -141,7 +141,7 @@ body.light-theme .choose-movie {
 
 
     .catalog-search {
-        padding-top: 40px;
+      
         padding-bottom: 16px;
         margin-bottom: 50px;
     }
@@ -221,7 +221,7 @@ body.light-theme .choose-movie {
 @media screen and (min-width:768px) {
 
     .catalog-search {
-        padding-top: 60px;
+
         padding-bottom: 36px;
         margin-bottom: 0;
     }
@@ -268,10 +268,14 @@ body.light-theme .choose-movie {
 @media screen and (min-width:1280px) {
 
     .catalog-search {
-        padding-top: 80px;
+
         padding-bottom: 48px;
     }
-
+    .search {
+       
+        font-size: 16px;
+        
+    }
     .catalog-search-form {
         width: 795px;
         height: 48px;

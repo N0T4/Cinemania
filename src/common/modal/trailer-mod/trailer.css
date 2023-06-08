@@ -1,0 +1,76 @@
+.without-trailer {
+    position: relative;
+    width: 280px;
+    height: 289px;
+    background-color: #000000;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  .without-trailer-text-wrapper {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    padding: 39px 33px;
+    margin-bottom: 20px;
+  }
+  
+  .without-trailer-text {
+    display: block;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+  }
+  
+  .notrailer-img {
+    position: absolute;
+    width: 159px;
+    height: 153px;
+    top: 140px;
+    left: 61px;
+    background-image: url(../../../images/hero/no-trailer-mob-1x.png);
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    .without-trailer {
+    width: 609px;
+    height: 400px;
+    }
+    .without-trailer-text-wrapper{
+        padding: 132px 44px;
+    }
+    .without-trailer-text {
+        font-size: 24px;
+        line-height: 28px;  
+    }
+    .notrailer-img {
+    top: 140px;
+    left: 315px;
+    width: 296px;
+    height: 260px;
+    background-image: url(../../../images/hero/no-trailer-tab-1x.png);
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .without-trailer {
+        width: 700px;
+        height: 400px;
+    }
+    .without-trailer-text-wrapper{
+        padding: 150px 50px;
+    }
+    .without-trailer-text{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .notrailer-img {
+        width: 363px;
+        height: 318px;
+        left: 337px;
+        top: 77px;
+      background-image: url(../../../images/hero/no-trailer-desk-1x.png);
+    }
+  }

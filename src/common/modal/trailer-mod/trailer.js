@@ -15,27 +15,25 @@ export async function getTrailer(id) {
 }
 export function watchTrailer({ data }) {
   const watchButton = document.querySelector('.hero-button-js');
-  console.log('function watch trailer:', data);
   const trailers = data.results;
   if (trailers.length !== 0) {
-    console.log('если не равно нулю', trailers);
+    // console.log('если не равно нулю', trailers);
     const randomIndex = Math.floor(Math.random() * (trailers.length - 1));
     const randomTrailer = trailers[randomIndex];
-    console.log(randomTrailer);
-    console.log(randomTrailer.key);
+    // console.log(randomTrailer);
+    // console.log(randomTrailer.key);
     watchButton.addEventListener('click', function () {
       const videoUrl = `https://www.youtube.com/embed/${randomTrailer.key}`;
       openVideoModal(videoUrl);
     });
   }
 }
+
 function openVideoModal(videoUrl) {
   const instance = basicLightbox.create(
-    `
-    <div class="modal-video">
+    `<div class="modal-video">
       <iframe width="560" height="315" src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-      `,
+     </div>`,
     {
       onShow: instance => {
         instance
@@ -46,4 +44,22 @@ function openVideoModal(videoUrl) {
     }
   );
   instance.show();
+}
+export function openNoTrailerModal(){
+  const watchButton = document.querySelector('.hero-button-js');
+  watchButton.addEventListener('click', function () {
+    const markup = `
+    <div class="without-trailer">
+      <div class="without-trailer-text-wrapper">
+        <p class="without-trailer-text">OOPS...</p>
+        <p class="without-trailer-text">We are very sorry!</p>
+        <p class="without-trailer-text">But we couldn’t find the trailer.</p>
+      </div>
+      <div class="notrailer-img"></div>
+    </div>
+`;
+const lightbox = basicLightbox.create(markup);
+lightbox.show();
+  })
+  
 }

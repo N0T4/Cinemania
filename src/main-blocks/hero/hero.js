@@ -1,7 +1,6 @@
 import {getUser} from "./API"
 import {onOpenModal} from "../../common/modal/film-overview/overview"
-import {getTrailer, watchTrailer} from "../../common/modal/trailer-mod/trailer"
-console.log("getrailer from trailer js",getTrailer);
+import {getTrailer, watchTrailer, openNoTrailerModal} from "../../common/modal/trailer-mod/trailer"
 
 const hero = document.querySelector(".hero")
 const button = document.querySelector('.button-js');
@@ -68,7 +67,15 @@ function renderHero({results}){
     const detailsButton = document.querySelector(".modal-btn")
     detailsButton.addEventListener("click", onOpenModal)
 
-    getTrailer(movieTheDay.id).then(watchTrailer).catch()
+    // getTrailer(movieTheDay.id).then(watchTrailer).catch()
+    getTrailer(movieTheDay.id).then(res=>{
+        if(res === undefined || res.data.results.length === 0 ||  res.data === undefined){
+         openNoTrailerModal()
+        }else{
+          watchTrailer(res)
+        }
+    }).catch(error => console.log(error))
+    
 }
 function showRating(rating) {
   const filledStarsWidth = (rating / 10) * 100;
@@ -90,5 +97,5 @@ function updateCinemaText() {
     }  else {
       cinemaText.textContent = "Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers.";
     }
-  }
+}
 

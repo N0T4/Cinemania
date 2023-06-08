@@ -258,14 +258,3 @@
       font-size: 22.5px;
     }
   }
-  .basicLightbox {
-    background-color: rgba(207, 13, 13, 0.8);
-  }
-  
-
-  .basicLightbox__placeholder {
-    border-radius: 20px;
-  }
-  .modal-video iframe{
-    border-radius: 20px;
-  }

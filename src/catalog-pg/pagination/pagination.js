@@ -7,7 +7,7 @@ const options = {
   totalItems: 1000,
 
   itemsPerPage: 21,
-  visiblePages: 5,
+  visiblePages: 3,
 
   page: 1,
   centerAlign: false,

@@ -87,9 +87,6 @@ body.light-theme .icon-close {
   margin-right: auto;
   margin-left: auto;
   display: block;
-
-  /* min-width: 280px;
-  height: 390px; */
   min-width: 248px;
   height: 345px;
   border-radius: 5px;
@@ -304,7 +301,6 @@ body.light-theme .film-button:focus {
 
   .film-about-text {
     max-height: 140px;
-    /* margin-bottom: 24px; */
   }
 
   .film-info--upper {

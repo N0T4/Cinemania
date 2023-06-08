@@ -16,10 +16,11 @@ const refs = {
 };
 
 async function onOpenModal(event) {
+  console.log(event.target);
   try {
-    if (!event.target.closest('.film-card')) {
-      return;
-    }
+    // if (!event.target.closest('.film-card')) {
+    //   return;
+    // }
 
     event.preventDefault();
 
@@ -29,6 +30,7 @@ async function onOpenModal(event) {
 
     const targetEl = event.target;
     const idEl = targetEl.parentElement;
+
     const movieId = idEl.dataset.id;
 
     const results = await fetchMovieById(movieId);
@@ -198,18 +200,6 @@ function createMarkupCardModal({
 
   return markup;
 }
-
-// function getAvailabilityImage({id}) {
-//   const image = [data].map(item => {
-//     if (item === null) {
-//       item = pictureExample;
-//     } else {
-//       item = `https://image.tmdb.org/t/p/w500/${item}`;
-//     }
-//     return item;
-//   });
-//   return image;
-// }
 
 function updateCardModal(markup) {
   refs.modalBodyEl.innerHTML = markup;

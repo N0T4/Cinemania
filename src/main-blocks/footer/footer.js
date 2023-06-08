@@ -10,6 +10,7 @@ import pokamiestovaPhoto from '../../images/students/pokamiestova.jpg';
 import dimekhinPhoto from '../../images/students/dimekhin.jpg';
 import poliakovPhoto from '../../images/students/poliakov.jpg';
 
+const audio = document.querySelector('.students-overlay audio');
 const students = [
   {
     studentName: 'Mikhail Sharaevsky',
@@ -98,7 +99,7 @@ function showStudents(studentsArray, parentElement) {
 function showStudentsModal() {
   const studentsOverlayElement = document.querySelector('.students-overlay');
   studentsOverlayElement.classList.toggle('visually-hidden');
-
+  playMusic();
   closeStudentsModal(studentsOverlayElement);
 }
 
@@ -106,5 +107,10 @@ function closeStudentsModal(element) {
   const closeBtnElement = document.querySelector('.students-modal-close-btn');
   closeBtnElement.addEventListener('click', () => {
     element.classList.add('visually-hidden');
+    audio.pause();
   });
+}
+
+function playMusic() {
+  audio.play();
 }

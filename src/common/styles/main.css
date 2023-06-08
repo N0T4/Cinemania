@@ -92,8 +92,7 @@ body.light-theme {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.first-section {
-}
+
 
 .second-section {
   margin-top: 70px;
@@ -151,17 +150,5 @@ body.light-theme {
     width: 1278px;
     margin: 0 auto;
   }
-}
-
-.home-pg-fourth-section {
-}
-
-.catalog-pg-third-section {
-}
-
-.library-pg-third-section {
-}
-
-.last-section {
 }
 

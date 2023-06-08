@@ -100,6 +100,6 @@ function createMarkup({ data }) {
                         </div>
             <h2 class="upcoming-about">ABOUT</h2>
             <p class="upcoming-overview">${data.overview}</p>
-            <button type="button" class="film-button js-watch">Add to my library</button>
+            <button class="upcoming-button" type="button">Add to Library</button>
         </div>`;
 }

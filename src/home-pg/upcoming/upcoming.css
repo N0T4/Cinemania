@@ -4,6 +4,12 @@
     font-family: 'Roboto';
     font-style: normal;
 }
+.upcoming-error{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
 @media screen and (min-width: 768) {
     .upcoming {
         width: 707px;
@@ -64,6 +70,21 @@ body.light-theme .upcoming-overview{
     font-size: 16px;
     line-height: 1.18;
     margin-left: 20px;
+}
+.upcoming-button {
+    color: #111;
+        text-align: center;
+        width: 140px;
+        height: 38px;
+        background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+        border: none;
+        border-radius: 74px;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        line-height: 1.1;
+        transition: color .3s;
+        display: flex;
 }
 .upcoming-popularity {
     font-size: 16px;
@@ -153,6 +174,7 @@ margin-left: 78px;
 }
 .upcoming-overview{
     width: 280px;
+    margin-bottom: 20px;
 }
 }
  @media (min-width: 768px) {
@@ -183,6 +205,11 @@ margin-left: 78px;
  .upcoming-release-data {
      margin-left: 58px;
  }
+.upcoming-button { 
+width: 155px;
+height: 40px;
+font-size: 14px;
+}
  }
  @media (min-width: 1280px) {
     .upcoming-title {

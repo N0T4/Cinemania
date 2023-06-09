@@ -42,6 +42,10 @@ body.light-theme .header {
   z-index: 4;
 }
 
+body.light-theme .span{
+  color: var(--black);
+}
+
 .span {
   display: block;
   font-family: 'Roboto';

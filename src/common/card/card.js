@@ -77,7 +77,7 @@ class CardInfo {
   }
 }
 
-function createCardsCatalog(URL, parentElement, catalogLength = 20) {
+function createCardsCatalog(URL, parentElement, catalogLength = 18) {
   const options = {
     method: 'GET',
     headers: {
@@ -89,16 +89,32 @@ function createCardsCatalog(URL, parentElement, catalogLength = 20) {
 
   fetch(URL, options)
     .then(response => response.json())
-    .then(response => {
-      if (catalogLength) {
-        response.results.length = catalogLength;
-      }
-      response.results.forEach(filmInfoObject => {
+    .then(({ results }) => {
+      console.log(results);
+      results = results.slice(0, 18);
+      // if (catalogLength) {
+      //   response.results.length = catalogLength;
+      // }
+      results.forEach(filmInfoObject => {
         renderPhotoCard(filmInfoObject, parentElement);
       });
       parentElement.addEventListener('click', onOpenModal);
     })
     .catch(err => console.error(err));
+
+  // fetch(URL, options)
+  // .then(response => response.json())
+  // .then(response => {
+  //   if (catalogLength) {
+  //     response.results.length = catalogLength;
+  //   }
+
+  //   response.results.forEach(filmInfoObject => {
+  //     renderPhotoCard(filmInfoObject, parentElement);
+  //   });
+  //   parentElement.addEventListener('click', onOpenModal);
+  // })
+  // .catch(err => console.error(err));
 }
 
 const card = new CardInfo();

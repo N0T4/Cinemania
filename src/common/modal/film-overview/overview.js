@@ -101,7 +101,9 @@ async function fetchMovieById(movieId) {
       options
     );
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw new Error(
+        (refs.modalBodyEl.innerHTML = `<div class="sorry-message">OOPS...We are very sorry! We don't have more information about this movie.</div>`)
+      );
     }
     return response.json();
   } catch (error) {

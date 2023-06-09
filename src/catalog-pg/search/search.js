@@ -137,6 +137,7 @@ function onClickClearCrossBtn(e) {
       console.log(results);
       console.log(total_results);
       console.log(newCatalogElement);
+      pagination.reset(total_results);
       renderFromResults(results);
       //  console.log('успіх');
     })
@@ -151,7 +152,7 @@ function renderFromResults(results) {
   newCatalogElement.innerHTML = '';
   results.forEach(result => {
     renderPhotoCard(result, newCatalogElement);
-    console.log('успіх тренди');
+    // console.log('успішно зарендерилось');
   });
 }
 
@@ -177,7 +178,7 @@ function getRenderByQuery(event) {
       console.log(total_results);
       console.log(newCatalogElement);
       renderFromResults(results);
-      console.log('успіх наступна сторінка квері');
+      // console.log('успіх наступна сторінка по пошуку');
     })
     .catch(error => console.log(error));
 }
@@ -192,7 +193,7 @@ function getRenderByYear(event) {
       console.log(newCatalogElement);
       renderFromResults(results);
 
-      console.log('успіх рік пагінація');
+      // console.log('успіх рік пагінація');
     })
     .catch(error => console.log(error));
 }

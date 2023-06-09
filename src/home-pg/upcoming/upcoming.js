@@ -41,8 +41,8 @@ fetch(url, options)
         const randomMovie = getRandom(1, 20)
         const data = json.results[randomMovie]
         const createdMarkup = createMarkup({ data });
-        upcomingRender.insertAdjacentHTML('beforeend', createdMarkup);
-         }
+        upcomingRender.insertAdjacentHTML('beforeend', createdMarkup)};
+      
     })
 
 
@@ -100,6 +100,6 @@ function createMarkup({ data }) {
                         </div>
             <h2 class="upcoming-about">ABOUT</h2>
             <p class="upcoming-overview">${data.overview}</p>
-            <button class="upcoming-button" type="button">Add to Library</button>
+            <button class="upcoming-button" type="button">Add to my Library</button>
         </div>`;
 }

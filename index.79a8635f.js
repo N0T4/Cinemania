@@ -29,6 +29,6 @@ var e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"u
                         </div>
             <h2 class="upcoming-about">ABOUT</h2>
             <p class="upcoming-overview">${e.overview}</p>
-            <button class="upcoming-button" type="button">Add to Library</button>
+            <button class="upcoming-button" type="button">Add to my Library</button>
         </div>`}({data:n});o.insertAdjacentHTML("beforeend",a)}}).catch(e=>console.error("error:"+e));const o=document.querySelector(".container-upcoming");var s=a("7ejv3");const c=document.querySelector(".weekly-trends_gallery");(0,s.createCardsCatalog)("https://api.themoviedb.org/3/trending/all/week?page=1&per_page=20",c,3),a("cpaFc");
-//# sourceMappingURL=index.a0bfadd8.js.map
+//# sourceMappingURL=index.79a8635f.js.map
